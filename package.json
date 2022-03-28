@@ -4,7 +4,8 @@
   "description": "Projeto Final - Clone da Netflix (catalogo) CRUD",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    "dev": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/alexmeirelles/CloneNetflix/issues"
   },
-  "homepage": "https://github.com/alexmeirelles/CloneNetflix#readme"
+  "homepage": "https://github.com/alexmeirelles/CloneNetflix#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
