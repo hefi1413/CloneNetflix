@@ -15,8 +15,8 @@ const catalogo = [
       ano: 1993,
       genero: "Aventura",
       tipo: "filme",
-      descricao:"As soon as it catches the scent of prey, Sharpedo will jet seawater from its backside, hurtling toward the target to attack at 75 mph.",
-      imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/319.png",
+      descricao:"Durante um tour o parque sofre falta de energia eléctrica o que faz que um dinossauro clonado saia do seu claustro.",
+      imagem: "https://uauposters.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/9/4/941620150620-uau-posters-filme-jurassic-world-2.jpg",
   },
   {
     id: 2,
@@ -24,8 +24,8 @@ const catalogo = [
     ano: 1994,
     genero: "Policial",
     tipo: "filme",
-    descricao:"As soon as it catches the scent of prey, Sharpedo will jet seawater from its backside, hurtling toward the target to attack at 75 mph.",
-    imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/319.png",
+    descricao:"Durante um tour o parque sofre falta de energia eléctrica o que faz que um dinossauro clonado saia do seu claustro.",
+    imagem: "https://uauposters.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/9/4/941620150620-uau-posters-filme-jurassic-world-2.jpg",
   },
   {
     id: 3,
@@ -33,12 +33,10 @@ const catalogo = [
     ano: 1994,
     genero: "Aventura",
     tipo: "filme",
-    descricao:"As soon as it catches the scent of prey, Sharpedo will jet seawater from its backside, hurtling toward the target to attack at 75 mph.",
-    imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/319.png",
+    descricao:"Durante um tour o parque sofre falta de energia eléctrica o que faz que um dinossauro clonado saia do seu claustro.",
+    imagem: "https://uauposters.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/9/4/941620150620-uau-posters-filme-jurassic-world-2.jpg",
   }
 ]
-
-
 
 
 //Rotas //
