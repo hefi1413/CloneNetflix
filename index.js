@@ -55,7 +55,6 @@ app.post("/add",(req, res) => {
   res.redirect("/");
 })
 
-
 app.get("/detalhes/:id", (req, res) => {
   const id = req.params.id
   const filme = catalogo[id-1]
