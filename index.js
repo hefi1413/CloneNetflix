@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config()
+const Filme = require("./model/filmes");
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -43,9 +44,16 @@ const catalogo = [
 
 
 //Rotas //
-app.get('/', (req, res) => {
-  res.render('index');
+
+app.get("/", async (req, res) => {
+  const filmes = await Filme.findAll();
+
+  res.render("index", {
+    filmes,
+  });
 });
+
+
 
 app.post("/add",(req, res) => {
   const catalogo = req.body;
