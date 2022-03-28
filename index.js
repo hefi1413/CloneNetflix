@@ -66,4 +66,4 @@ app.get("/cadastro", (req, res) => {
 }); 
 
 
-app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
+app.listen(port || process.env.PORT, () => console.log(`Servidor rodando em http://localhost:${port}`));
