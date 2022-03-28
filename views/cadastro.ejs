@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <title>Cadastrar Filme/title>
+</head>
+<body>
+    
+    <header>
+        
+        <center>
+            <img id="logo" src="https://pokedex.sleduardo.dev/img/logo.svg"> 
+        </center>   
+        <nav>
+            <a href="/" class="button-58" role="button">INICIO</a>
+            <a href="/cadastro/" class="button-58" role="button">CADASTRO</a> 
+            </nav>
+    </header>
+
+        <section id="cadastro">
+            <h2>CADASTRO DE NOVO FILME OU SÉRIE</h2>
+            <form action="/add" method="POST">
+
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="tipo">Tipo: </label>
+                <input type="text" id="tipo" name="tipo" required>
+
+                <label for="imagem">Link da Imagem: </label>
+                <input type="url" id="imagem" name="imagem" required>
+
+                <label for="descricao">Descrição: </label>
+                <input type="text" id="descricao" name="descricao" required>
+
+                <label for="altura">Altura: </label>
+                <input type="text" id="altura" name="altura" required>
+
+                <label for="peso">Peso: </label>
+                <input type="text" id="peso" name="peso" required>
+
+                <label for="categoria">Categoria: </label>
+                <input type="text" id="categoria" name="categoria" required>
+
+                <label for="habilidade">Habilidade: </label>
+                <input type="text" id="habilidade" name="habilidade" required>
+
+                <center>
+                <button id="btnCadastrar" type="submit">Cadastrar</button>    
+                </center>
+
+            </form>
+
+        </section>
+    </main>
+    
+    <footer id='footer'>
+        <center>
+           <small>
+            ©2022 Netflix. TM, ®Netflix.
+        </small> 
+        </center>
+    </footer>
+    
+    <script src="/public/script.js"></script>
+</body>
+</html>
