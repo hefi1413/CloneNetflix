@@ -1,0 +1,32 @@
+
+/*
+  
+  Não coloquei o script para criação do banco "netflix" aki pq criei dentro do pgAdmin
+  
+*/
+
+-- DROP TABLE Filmes CASCADE;
+
+CREATE TABLE Filmes (
+  Id 		    INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+  Codigo 	  INTEGER NOT NULL,
+  Nome 		  VARCHAR(100)  NOT NULL,
+  Ano		    INTEGER NOT NULL,
+  Genero	  VARCHAR(15) NOT NULL,
+  Descricao VARCHAR(250) ,
+  Tipo		  INTEGER,
+  Imagem	  VARCHAR(200) NOT NULL,
+
+PRIMARY KEY (id) );
+
+
+-- DROP INDEX filmes_codigo;
+
+CREATE INDEX filmes_codigo
+  ON Filmes(Codigo);
+
+
+-- exemplo para testes
+INSERT INTO Filmes(Codigo, Nome, Ano, Genero, Descricao, Tipo, imagem) 
+  VALUES(4, 'Braking Bad', 2019, 'Drama', 'A Breaking Bad Movie é um filme norte-americano de drama lançado em 2019', 1, 'mini4.jpg');
+

@@ -1,0 +1,23 @@
+
+
+
+-- DROP TABLE Filmes CASCADE;
+
+CREATE TABLE Filmes (
+Id 		INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+Codigo 	INTEGER NOT NULL,
+Nome 		VARCHAR(50)  NOT NULL,
+Ano		INTEGER NOT NULL,
+Genero	VARCHAR(15) NOT NULL,
+Descricao 	VARCHAR(200) ,
+Tipo		INTEGER,
+Imagem	VARCHAR(200) );
+
+
+DROP INDEX filmes_codigo;
+
+CREATE INDEX filmes_codigo
+  ON Filmes(Codigo);
+
+
+

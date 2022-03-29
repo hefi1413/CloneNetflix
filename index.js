@@ -2,12 +2,21 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
+const env =require("dotenv");
+
+// enviroment variables
+env.config();
+
+// controllers do app
+const filmesController = require('./controlls/filmesController');
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded());
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 
+/*
 const catalogo = [
   {
       id: 1,
@@ -37,9 +46,20 @@ const catalogo = [
     imagem: "https://uauposters.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/9/4/941620150620-uau-posters-filme-jurassic-world-2.jpg",
   }
 ]
-
+*/
 
 //Rotas //
+
+// consultar
+app.get('/', filmesController.listar );
+
+app.post("/add", filmesController.adicionar );
+
+app.post("/editar", filmesController.editar );
+
+app.post("/deletar/:id", filmesController.deletar );
+
+/*
 app.get('/', (req, res) => {
   res.render('index');
 });
@@ -54,6 +74,7 @@ app.post("/add",(req, res) => {
   }, 5000);
   res.redirect("/");
 })
+*/
 
 app.get("/detalhes/:id", (req, res) => {
   const id = req.params.id
