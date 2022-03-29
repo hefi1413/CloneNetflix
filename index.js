@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+require('dotenv').config()
+const Filme = require("./model/filmes");
 const app = express();
 const port = process.env.PORT || 3000;
 const env =require("dotenv");
@@ -17,6 +19,8 @@ app.use(express.urlencoded({extended: false}));
 
 
 /*
+
+
 const catalogo = [
   {
       id: 1,
@@ -62,7 +66,22 @@ app.post("/deletar/:id", filmesController.deletar );
 /*
 app.get('/', (req, res) => {
   res.render('index');
+app.get("/", async (req, res) => {
+  const filmes = await Filme.findAll();
+
+  res.render("index", {
+    filmes,
+  });
 });
+
+app.get("/filmes/:id", async (req, res) => {
+  const filme = await Filme.findByPk(req.params.id);
+
+  res.render("detalhes", {
+    filme,
+  });
+});
+
 
 app.post("/add",(req, res) => {
   const catalogo = req.body;
@@ -87,4 +106,4 @@ app.get("/cadastro", (req, res) => {
 }); 
 
 
-app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
+app.listen(port || process.env.PORT, () => console.log(`Servidor rodando em http://localhost:${port}`));
