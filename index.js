@@ -53,6 +53,13 @@ app.get("/", async (req, res) => {
   });
 });
 
+app.get("/filmes/:id", async (req, res) => {
+  const filme = await Filme.findByPk(req.params.id);
+
+  res.render("detalhes", {
+    filme,
+  });
+});
 
 
 app.post("/add",(req, res) => {
