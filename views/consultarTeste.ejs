@@ -17,6 +17,7 @@
             <% for(let filme of filmes){ %>
                 <div style="width: 200px; height:200px;">
                     <img style="width: 100%;" src= <%= "/img/" + filme.imagem %> title= <%= filme.id %> >
+                    <h2><%= filme.nome %></h2>
                 </div>
             <% } %>
         </div>

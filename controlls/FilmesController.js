@@ -1,168 +1,164 @@
-
 //
-//  SCRIPT CONTROLLER 
+//  SCRIPT CONTROLLER
 //
 
-const  Filmes = require('../models/filmes');
+const Filmes = require('../models/filmes');
 
 var message = '';
 
-  
 var filmesController = {
+  // Exibe todos titulos cadastrados no catalogo
+  // --------------------------
+  listar: async function (req, res, next) {
+    console.log(req.method + ' ' + req.url);
 
-    // Exibe todos titulos cadastrados no catalogo
-    // --------------------------
-    listar: async function(req, res, next) {
-        console.log( req.method + ' ' + req.url  );
+    const fileName = 'consultarTeste.ejs';
 
-        const fileName ='consultarTeste.ejs';
-        
-        try {
-            let filmes = await Filmes.findAll( { raw: true } );
+    try {
+      let filmes = await Filmes.findAll({ raw: true });
 
-            //console.table( filmes );
+      //console.table( filmes );
 
-            setTimeout(() => {
-                message = ""
-            }, 5000);
-          
-            res.render( fileName , { 'filmes': filmes, 'message': message });
-        }
-        catch( err ) {
-            message = `Erro ! ${err}`;
-            res.status(500).send( message );
-        }
-    },
+      setTimeout(() => {
+        message = '';
+      }, 5000);
 
-    // Adiciona/cadastra um titulo no catalogo
-    // --------------------------
-    adicionar: async function(req, res, next) {
-        console.log( req.method + ' ' + req.url  );
-        
-        let _filme =req.body;
-        try {
-            // verifica se filme ja esta cadastrado
-            let filme =await Filmes.findOne( { where: { 'codigo': _filme.codigo } } );
+      res.render(fileName, { filmes: filmes, message: message });
+    } catch (err) {
+      message = `Erro ! ${err}`;
+      res.status(500).send(message);
+    }
+  },
 
-            if( filme ) {   // filme ja existe catalogo
-                message = `Erro! Filme ja existe no catálogo!`;
-                res.redirect("/");
-                return;
-            };
+  // Adiciona/cadastra um titulo no catalogo
+  // --------------------------
+  adicionar: async function (req, res, next) {
+    console.log(req.method + ' ' + req.url);
 
-            //console.log('filme: ', filme);
-            
-            // adiciona filme
-            Filmes.create( _filme )
-            .then( () => { 
-                message = `Parabéns! Filme adicionado com sucesso!`;
-                
-                console.log('message: ', message);
+    let _filme = req.body;
+    try {
+      // verifica se filme ja esta cadastrado
+      let filme = await Filmes.findOne({ where: { codigo: _filme.codigo } });
 
-                res.redirect("/");
-             } )
-             .catch( (err) => {
-                message = `Não foi possível adicionar filme! \r\n ${err}` ; 
+      if (filme) {
+        // filme ja existe catalogo
+        message = `Erro! Filme ja existe no catálogo!`;
+        res.redirect('/');
+        return;
+      }
 
-                // console.log('err : ', message);
+      //console.log('filme: ', filme);
 
-                throw new Error( message );
-             });
-        } catch( err ) {
-            message = "Erro ! " + err.message;
+      // adiciona filme
+      Filmes.create(_filme)
+        .then(() => {
+          message = `Parabéns! Filme adicionado com sucesso!`;
 
-            console.log( message );
+          console.log('message: ', message);
 
-            res.redirect("/");
-        }
-    },
+          res.redirect('/');
+        })
+        .catch(err => {
+          message = `Não foi possível adicionar filme! \r\n ${err}`;
 
-    // Altera um titulo cadastrado no catalogo
-    // --------------------------
-    editar: async function(req, res, next) {
-        console.log( req.method + ' ' + req.url  );
+          // console.log('err : ', message);
 
-        let _filme =req.body;
-        try {
-            // localiza filme no BD
-            var filme = await Filmes.findByPk(_filme.id);
+          throw new Error(message);
+        });
+    } catch (err) {
+      message = 'Erro ! ' + err.message;
 
-            if( ! filme ) {
-                message =`Erro ! O filme ${_filme.nome} não foi localizado !`;
-                res.redirect("/");
-                return;
-            };
-            //
-            // Altera filme
+      console.log(message);
 
-            // prevem o servidor de aletrar o id do filme
-            delete filme.id;
+      res.redirect('/');
+    }
+  },
 
-            filme.nome =_filme.nome;
-            filme.ano = _filme.ano;
-            filme.genero = _filme.genero;
-            filme.descricao = _filme.descricao;
-            filme.tipo = _filme.tipo;
-            filme.imagem = _filme.imagem;
+  // Altera um titulo cadastrado no catalogo
+  // --------------------------
+  editar: async function (req, res, next) {
+    console.log(req.method + ' ' + req.url);
 
-            await filme.save()
-            .then( (result) => {
-                message = `Sucesso ! Filme alterado com sucesso.`;
+    let _filme = req.body;
+    try {
+      // localiza filme no BD
+      var filme = await Filmes.findByPk(_filme.id);
 
-                //console.log( 'message:', result );
+      if (!filme) {
+        message = `Erro ! O filme ${_filme.nome} não foi localizado !`;
+        res.redirect('/');
+        return;
+      }
+      //
+      // Altera filme
 
-                res.redirect("/");
-            })
-            .catch( (err) => {
-                message = `Erro ! Não foi possível aletrar filme. \r\n ${err}`;
+      // prevem o servidor de aletrar o id do filme
+      delete filme.id;
 
-                //console.log( 'Error:', err );
+      filme.nome = _filme.nome;
+      filme.ano = _filme.ano;
+      filme.genero = _filme.genero;
+      filme.descricao = _filme.descricao;
+      filme.tipo = _filme.tipo;
+      filme.imagem = _filme.imagem;
 
-                throw new Error( message );
-            });
-        }
-        catch( err ) {
-            message = "Erro ! " + err.message;
+      await filme
+        .save()
+        .then(result => {
+          message = `Sucesso ! Filme alterado com sucesso.`;
 
-            console.log( message );
+          //console.log( 'message:', result );
 
-            res.redirect("/");
-        }
-    },
+          res.redirect('/');
+        })
+        .catch(err => {
+          message = `Erro ! Não foi possível aletrar filme. \r\n ${err}`;
 
-    // Exclui um titulo do catalogo
-    // --------------------------
-    deletar: async function(req, res, next) {
-        console.log( req.method + ' ' + req.url  );
+          //console.log( 'Error:', err );
 
-        let filmeId =req.params.id;
-        try {
-            // localiza filme no BD
-            var filme = await Filmes.findByPk(filmeId);
-        
-            filme.destroy()
-            .then( () => {
-                message = `Sucesso ! Filme deletado com sucesso.`;
-    
-                res.redirect("/")
-            })
-            .catch( (err) => {
-                message = `Não foi possível deletar o filme. \r\n ${err}`;
+          throw new Error(message);
+        });
+    } catch (err) {
+      message = 'Erro ! ' + err.message;
 
-                //console.log( 'Error:', err );
+      console.log(message);
 
-                throw new Error( message );
-            });
-        }
-        catch( err ) {
-            message = "Erro ! " + err.message;
+      res.redirect('/');
+    }
+  },
 
-            console.log( message );
+  // Exclui um titulo do catalogo
+  // --------------------------
+  deletar: async function (req, res, next) {
+    console.log(req.method + ' ' + req.url);
 
-            res.redirect("/");
-        }
-    },
+    let filmeId = req.params.id;
+    try {
+      // localiza filme no BD
+      var filme = await Filmes.findByPk(filmeId);
+
+      filme
+        .destroy()
+        .then(() => {
+          message = `Sucesso ! Filme deletado com sucesso.`;
+
+          res.redirect('/');
+        })
+        .catch(err => {
+          message = `Não foi possível deletar o filme. \r\n ${err}`;
+
+          //console.log( 'Error:', err );
+
+          throw new Error(message);
+        });
+    } catch (err) {
+      message = 'Erro ! ' + err.message;
+
+      console.log(message);
+
+      res.redirect('/');
+    }
+  },
 };
 
-
-module.exports =filmesController;
+module.exports = filmesController;

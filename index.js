@@ -1,10 +1,10 @@
 const express = require('express');
 const path = require('path');
-require('dotenv').config()
-const Filme = require("./model/filmes");
+require('dotenv').config();
+const Filme = require('./models/filmes');
 const app = express();
 const port = 3000;
-const env = require("dotenv");
+const env = require('dotenv');
 
 // enviroment variables
 env.config();
@@ -15,8 +15,7 @@ const filmesController = require('./controlls/filmesController');
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
-
+app.use(express.urlencoded({ extended: false }));
 
 /*
 
@@ -55,13 +54,13 @@ const catalogo = [
 //Rotas //
 
 // consultar
-app.get('/', filmesController.listar );
+app.get('/', filmesController.listar);
 
-app.post("/add", filmesController.adicionar );
+app.post('/add', filmesController.adicionar);
 
-app.post("/editar", filmesController.editar );
+app.post('/editar', filmesController.editar);
 
-app.post("/deletar/:id", filmesController.deletar );
+app.post('/deletar/:id', filmesController.deletar);
 
 /*
 app.get('/', (req, res) => {
@@ -95,15 +94,14 @@ app.post("/add",(req, res) => {
 })
 */
 
-app.get("/detalhes/:id", (req, res) => {
-  const id = req.params.id
-  const filme = catalogo[id-1]
-  res.render("detalhes.ejs", { filme:filme })
+app.get('/detalhes/:id', (req, res) => {
+  const id = req.params.id;
+  const filme = catalogo[id - 1];
+  res.render('detalhes.ejs', { filme: filme });
 });
 
-app.get("/cadastro", (req, res) => {
-  res.render("cadastro.ejs")
-}); 
-
+app.get('/cadastro', (req, res) => {
+  res.render('cadastro.ejs');
+});
 
 app.listen(port || process.env.PORT, () => console.log(`Servidor rodando em http://localhost:${port}`));
