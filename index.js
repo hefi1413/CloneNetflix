@@ -3,8 +3,8 @@ const path = require('path');
 require('dotenv').config()
 const Filme = require("./model/filmes");
 const app = express();
-const port = process.env.PORT || 3000;
-const env =require("dotenv");
+const port = 3000;
+const env = require("dotenv");
 
 // enviroment variables
 env.config();
