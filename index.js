@@ -54,7 +54,9 @@ const catalogo = [
 //Rotas //
 
 // consultar
-app.get('/', filmesController.listar);
+app.get('/', filmesController.listar, (req, res) => {
+  res.render('index.ejs');
+});
 
 app.post('/add', filmesController.adicionar);
 

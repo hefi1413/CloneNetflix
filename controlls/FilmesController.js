@@ -12,7 +12,7 @@ var filmesController = {
   listar: async function (req, res, next) {
     console.log(req.method + ' ' + req.url);
 
-    const fileName = 'consultarTeste.ejs';
+    const fileName = 'index.ejs';
 
     try {
       let filmes = await Filmes.findAll({ raw: true });
