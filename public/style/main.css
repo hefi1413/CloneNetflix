@@ -13,7 +13,6 @@ body {
   background-color: var(--preta);
   font-family: 'Arial', Times, serif;
   color: white;
-  margin-left: 3rem;
 }
 
 nav{
@@ -27,14 +26,17 @@ header {
   flex-direction: row;
   align-items: center;
   gap: 2rem;
+  height: 68px;
+  padding: 0 4%;
   
 }
 
 header .logo {
   color: var(--vermelho);
   font-family: 'Arial Black', Times;
-  font-size: 40px;
-  margin-left: 5px;
+  font-size: 25px;
+  height: 35px;
+  width: 100px;
 }
 
 header .lista {
