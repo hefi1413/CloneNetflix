@@ -26,15 +26,8 @@
     </header>
 
     <main>
-
         <h1>Filmes</h1>
-
-        <% filmes.forEach(item => { %>
-            <h2><%= item.nome %></h2>
-            <p><%= item.descricao %></p>
-            <img src= <%= "/img/capas/" + item.imagem %> title= <%= item.id %> >
-        <% }) %>
-
+        
         <div class="filme-principal">
             <div class="container">
                 <h3 class="titulo">HOUSE OF CARDS</h3>
@@ -52,49 +45,32 @@
             </div>
         </div>
 
+        
+
+        <div class="carrosel-filmes">
+            
+            <div class="owl-carousel owl-theme">
+                <% filmes.forEach(item => { %>                
+        
+                <div class="item">
+                    <img class="box-filme" src= <%= "/img/capas/" + item.imagem %> >
+                </div>
+
+                <% }) %>
+        
+            </div>            
+        
+        </div>
 
     </main>
 
 
-<div class="carrosel-filmes">
-    <div class="owl-carousel owl-theme">
 
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini1.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini2.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini3.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini4.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini5.jpg">
-        </div><div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini6.jpg">
-        </div><div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini7.jpg">
-        </div><div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini8.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini9.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini10.jpg">
-        </div>
-
-    </div>
-
-</div>
 
     <script src="https://kit.fontawesome.com/e52baa07be.js" crossorigin="anonymous"></script>
-    <script src="/Netflix Clone/js/owl/jquery.min.js"></script>
-    <script src="/Netflix Clone/js/owl/owl.carousel.min.js"></script>
-    <script src="/Netflix Clone/js/owl/setup.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./js/setup.js"></script>
 
 </body>
 </body>
