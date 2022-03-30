@@ -29,7 +29,7 @@ var filmesController = {
             res.render( fileName , { 'filmes': filmes, 'message': message });
         }
         catch( err ) {
-            message = `Erro ! ${err}`;
+            message = 'Erro ! ' + err.message;
             res.status(500).send( message );
         }
     },
@@ -95,7 +95,7 @@ var filmesController = {
             //
             // Altera filme
 
-            // prevem o servidor de aletrar o id do filme
+            // prevem o servidor de alterar o id do filme
             delete filme.id;
 
             filme.nome =_filme.nome;
@@ -105,7 +105,7 @@ var filmesController = {
             filme.tipo = _filme.tipo;
             filme.imagem = _filme.imagem;
 
-            await filme.save()
+            filme.save()
             .then( (result) => {
                 message = `Sucesso ! Filme alterado com sucesso.`;
 
@@ -114,7 +114,7 @@ var filmesController = {
                 res.redirect("/");
             })
             .catch( (err) => {
-                message = `Erro ! Não foi possível aletrar filme. \r\n ${err}`;
+                message = `Erro ! Não foi possível aletrar filme.  ${err.message}`;
 
                 //console.log( 'Error:', err );
 
@@ -147,7 +147,7 @@ var filmesController = {
                 res.redirect("/")
             })
             .catch( (err) => {
-                message = `Não foi possível deletar o filme. \r\n ${err}`;
+                message = `Não foi possível deletar o filme.  ${err.message}`;
 
                 //console.log( 'Error:', err );
 

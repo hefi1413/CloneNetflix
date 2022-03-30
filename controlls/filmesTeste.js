@@ -11,22 +11,17 @@ var Controller = {
     // --------------------------
     listar: async function(req, res, next) {
         
-        const fileName = 'consultar.ejs';
         try{ 
 
-            Filmes.findAll({raw: true})
-                .then( (filmes) => {
-                    res.render(fileName, { filmes });
-                })
-                .catch( err => {
-                    res.status(500).send( err.messsage );
-                })
+            throw new Error( 'outro teste outro teste' );
         }
-        catch( e ) {
+        catch( err ) {
 
-            console.log( 'Err:', e );
+            let message ='Erro ! ' + err.message ;
 
-            res.status(500).send( e );
+            console.log( message );
+
+            res.status(500).send( message );
 
         }
     },

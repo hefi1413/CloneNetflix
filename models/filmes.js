@@ -1,6 +1,6 @@
 
 const Sequelize =require("sequelize");
-const connection = require('../database/db.js');
+const connection = require('./database/db.js');
 
 //
 //  DEFINIE/CRIA MODELO/TABELA USUARIOS

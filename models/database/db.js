@@ -8,11 +8,11 @@ const Sequelize =require("sequelize");
 //  DEFINIE/CRIA BANCO DE DADOS
 //
 var connection =new Sequelize(
-  process.env.DATABASE, 
-  process.env.USER_DB, 
-  process.env.PASS_DB, 
+  process.env.DB_BASE, 
+  process.env.DB_USER, 
+  process.env.DB_PASS, 
     {
-      host: process.env.HOST_DB,
+      host: process.env.DB_HOST,
       dialect: 'postgres',
       pool: {
           max: 5,
