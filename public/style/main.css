@@ -1,111 +1,117 @@
-
-:root{
-    --vermelho: #e50914;
-    --preta: #141414;
+:root {
+  --vermelho: #e50914;
+  --preta: #141414;
 }
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 /* elementos base */
 body {
-    background-color: var(--preta);
-    font-family: 'Arial', Times, serif;
-    color: white;
+  background-color: var(--preta);
+  font-family: 'Arial', Times, serif;
+  color: white;
+  margin-left: 3rem;
 }
 
-header .container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+nav{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/capa-house.jpg');
+  width: 100%;
+  min-height: 40rem;
 }
 
-header .logo{
-    color: var(--vermelho);
-    font-family: 'Arial Black', Times;
-    font-size: 40px;
-    margin-left: 5px;
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  
 }
 
-header nav a{
-    text-decoration: none;
-    color: #aaa;
-    margin-right: 10px;
-
+header .logo {
+  color: var(--vermelho);
+  font-family: 'Arial Black', Times;
+  font-size: 40px;
+  margin-left: 5px;
 }
 
-header nav a:hover{
-    color: #fff;
+header .lista {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
-/* filme principal */
-.filme-principal{
-    font-size: 16px;
-    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url('/Netflix Clone/img/capa-house.jpg');
-    
-    height: 400px;
-    background-size: cover;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
+header .lista a {
+  text-decoration: none;
+  color: rgb(215, 212, 212);
 }
 
-.filme-principal .descricao{
-    margin-top: 10px;
-    margin-bottom: 40px;
+header a:hover {
+  color: #aaa;
 }
 
-.titulo{
-    margin-top: 15%;
-    font-size: 40px;
-    font-family: 'Trebuchet MS', Arial, sans-serif;
+header .lista .lista__corrent {
+  color: rgb(251, 251, 251);
+  cursor: default;
 }
 
-.botao{
-    background-color: rgba(0,0,0,.50);
-    border: none;
-    color: white;
+/* filme rgb(255, 254, 254)cipal */
+.filme-principal {
+  font-size: 16px;
+  
+  height: 400px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
 
-    padding: 15px 30px;
-    margin-right: 15px;
-    font-size: 12px;
+.filme-principal .descricao {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
 
-    cursor: pointer;
-    transition: 1s ease all;
+.titulo {
+  margin-top: 15%;
+  font-size: 40px;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.botao {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+
+  padding: 15px 30px;
+  margin-right: 15px;
+  font-size: 12px;
+
+  cursor: pointer;
+  transition: 1s ease all;
 }
 
 .botao:hover {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
-.botao i{
-    margin-right: 7px;
-
+.botao i {
+  margin-right: 7px;
 }
-
 
 .container {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
-
-.filme-principal .container{
-    width: 70%;
+.filme-principal .container {
+  width: 70%;
 }
 
-.box-filme{
-    height: 100%;
-    width: 100%;
-    display: block;
-
+.box-filme {
+  height: 100%;
+  width: 100%;
+  display: block;
 }
-
-

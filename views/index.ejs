@@ -4,36 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Netflix Clone/style/main.css">
+    <link rel="shortcut icon" type="imagex/png" href="./img/icons/netflix__icon.png">
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/responsive.css">    
+    <link rel="stylesheet" href="./style/owl/carousel.min.css">
+    <link rel="stylesheet" href="./style/owl/theme.default.min.css">
     
-    <link rel="stylesheet" href="/Netflix Clone/style/owl/owl.carousel.min.css">
-    <link rel="stylesheet" href="/Netflix Clone/style/owl/owl.theme.default.min.css">
-    <link rel="stylesheet" href="/Netflix Clone/style/responsive.css">
     <title>NETFLIX CLONE</title>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <nav>
+        <header>
             <h2 class="logo">NETFLIX</h2>
-            <nav>
-                <a href="#">Inicio</a>
-                <a href="#">Series</a>
-                <a href="#">Filmes</a>
-                <a href="#">Documentários</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-
-        <h1>Filmes</h1>
-
-        <% filmes.forEach(item => { %>
-            <h2><%= item.nome %></h2>
-            <p><%= item.descricao %></p>
-            <img src="<%= item.imagem %>" alt="capa do filme">
-        <% }) %>
-
+            <div class="lista">
+                <a class="lista__corrent" href="#">Inicio</a>
+                <a class="lista__navegacao" href="#">Series</a>
+                <a class="lista__navegacao" href="#">Filmes</a>
+                <a class="lista__navegacao" href="/cadastro">Cadastrar</a>
+            </div>
+        </header>
+    
+        
+        
         <div class="filme-principal">
             <div class="container">
                 <h3 class="titulo">HOUSE OF CARDS</h3>
@@ -50,49 +42,36 @@
                 </div>
             </div>
         </div>
+    </nav>
+
+    <main>
+
         
+
+        <div class="carrosel-filmes">
+            
+            <div class="owl-carousel owl-theme">
+                <% filmes.forEach(item => { %>                
+        
+                <div class="item">
+                    <img class="box-filme" src= <%= "/img/capas/" + item.imagem %> >
+                </div>
+
+                <% }) %>
+        
+            </div>            
+        
+        </div>
+
     </main>
 
 
-<div class="carrosel-filmes">
-    <div class="owl-carousel owl-theme">
 
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini1.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini2.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini3.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini4.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini5.jpg">
-        </div><div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini6.jpg">
-        </div><div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini7.jpg">
-        </div><div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini8.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini9.jpg">
-        </div>
-        <div class="item">
-            <img class="box-filme" src="/Netflix Clone/img/mini10.jpg">
-        </div>
-
-    </div>
-
-</div>
 
     <script src="https://kit.fontawesome.com/e52baa07be.js" crossorigin="anonymous"></script>
-    <script src="/Netflix Clone/js/owl/jquery.min.js"></script>
-    <script src="/Netflix Clone/js/owl/owl.carousel.min.js"></script>
-    <script src="/Netflix Clone/js/owl/setup.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./js/setup.js"></script>
 
 </body>
 </body>
