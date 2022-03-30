@@ -13,13 +13,21 @@ body {
   background-color: var(--preta);
   font-family: 'Arial', Times, serif;
   color: white;
+  margin-left: 3rem;
 }
 
-header .container {
+nav{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/capa-house.jpg');
+  width: 100%;
+  min-height: 40rem;
+}
+
+header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  gap: 2rem;
+  
 }
 
 header .logo {
@@ -29,20 +37,30 @@ header .logo {
   margin-left: 5px;
 }
 
-header nav a {
+header .lista {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+header .lista a {
   text-decoration: none;
+  color: rgb(215, 212, 212);
+}
+
+header a:hover {
   color: #aaa;
-  margin-right: 10px;
 }
 
-header nav a:hover {
-  color: #fff;
+header .lista .lista__corrent {
+  color: rgb(251, 251, 251);
+  cursor: default;
 }
 
-/* filme principal */
+/* filme rgb(255, 254, 254)cipal */
 .filme-principal {
   font-size: 16px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/capa-house.jpg');
+  
   height: 400px;
   background-size: cover;
   display: flex;
