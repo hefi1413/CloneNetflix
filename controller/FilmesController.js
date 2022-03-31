@@ -36,7 +36,7 @@ var filmesController = {
     let _filme = req.body;
     try {
       // verifica se filme ja esta cadastrado
-      let filme = await Filmes.findOne({ where: { codigo: _filme.codigo } });
+      let filme = await Filmes.findOne({ where: { codigo: _filme.id } });
 
       if (filme) {
         // filme ja existe catalogo
