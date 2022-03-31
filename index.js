@@ -54,9 +54,7 @@ const catalogo = [
 //Rotas //
 
 // consultar
-app.get('/', filmesController.listar, (req, res) => {
-  res.render('index.ejs');
-});
+app.get('/', filmesController.listar);
 
 app.post('/add', filmesController.adicionar);
 
@@ -102,6 +100,10 @@ app.get('/detalhes/:id', (req, res) => {
   const id = req.params.id;
   const filme = catalogo[id - 1];
   res.render('detalhes.ejs', { filme: filme });
+});
+
+app.get('/', (req, res) => {
+  res.render('index.ejs');
 });
 
 app.get('/cadastro', (req, res) => {
