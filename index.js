@@ -3,7 +3,7 @@ const path = require('path');
 require('dotenv').config();
 const Filme = require('./models/filmes');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const env = require('dotenv');
 
 // enviroment variables
@@ -108,4 +108,4 @@ app.get('/cadastro', (req, res) => {
   res.render('cadastro.ejs');
 });
 
-app.listen(process.env.PORT || port, () => console.log(`Servidor rodando em http://localhost:${port}`));
+app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
