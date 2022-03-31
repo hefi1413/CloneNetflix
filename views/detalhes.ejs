@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="./img/icons/netflix__icon.png">
+    <link rel="stylesheet" href="./style/style__cadastro.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <title>Detalhes</title>
+</head>
+<body>
+    
+    <nav>
+        <header>
+            <img class="logo" src="./img/icons/logo.png" alt="logo__netflix">
+            <div class="lista">
+                <a class="lista__navegacao" href="/">Inicio</a>
+                <a class="lista__navegacao" href="#">Series</a>
+                <a class="lista__navegacao" href="#">Filmes</a>
+                <a class="lista__corrent" href="#">Cadastrar</a>
+            </div>
+
+        </header>
+            
+    </nav>
+    <main>
+
+        
+        <section id="cadastro">
+            <h2> DETALHES - <%= filme.nome %> </h2>
+            <form action="/add" method="post">
+
+                <label for="codigo">codigo: </label>
+                <input type="number" id="codigo" name="codigo" required="required">
+
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" required="required">
+
+                <label for="tipo">Tipo: </label>
+                <input type="text" id="tipo" name="tipo" required="required">
+
+                <label for="imagem">Link da Imagem: </label>
+                <input type="url" id="imagem" name="imagem" required="required">
+
+                <label for="descricao">Descrição: </label>
+                <input type="text" id="descricao" name="descricao" required="required">
+
+                <label for="ano">Ano: </label>
+                <input type="number" id="ano" name="ano" required="required">
+
+                <label for="genero">Genero: </label>
+                <input type="text" id="genero" name="genero" required="required">
+
+                <center>
+                <button id="btnCadastrar" type="submit">Cadastrar</button>    
+                </center>
+
+            </form>
+
+        </section>
+    </main>
+    
+    <footer id='footer'>
+        <center>
+           <small>
+            ©2022 Netflix. TM, ®Netflix.
+        </small> 
+        </center>
+    </footer>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>
