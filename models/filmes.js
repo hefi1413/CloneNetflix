@@ -12,22 +12,22 @@ var Filmes = connection.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    
+
     codigo: {
       type: Sequelize.INTEGER,
       allowNull: false,
       validate: {
         notEmpty: true,
-        isInt: true, 
-      }     
+        isInt: true,
+      },
     },
 
     nome: {
       type: Sequelize.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true, 
-      }    
+        notEmpty: true,
+      },
     },
 
     ano: {
@@ -35,8 +35,8 @@ var Filmes = connection.define(
       allowNull: false,
       validate: {
         notEmpty: true,
-        isInt: true, 
-      }    
+        isInt: true,
+      },
     },
 
     genero: {
@@ -44,7 +44,7 @@ var Filmes = connection.define(
       allowNull: false,
       validate: {
         notEmpty: true,
-      }    
+      },
     },
 
     descricao: {
@@ -59,7 +59,12 @@ var Filmes = connection.define(
         notEmpty: true,
         isLowercase: true,
         isIn: [['filme', 'serie']],
-      }    
+        tipo_teste() {
+          if ((this.tipo !== "filme") || (this.tipo === "serie")) {
+            throw new Error('Either both latitude and longitude, or neither!');
+          }
+        },
+      },
     },
 
     imagem: {
@@ -68,8 +73,7 @@ var Filmes = connection.define(
       validate: {
         notEmpty: true,
         isUrl: true,
-      }
-      
+      },
     },
   },
   {

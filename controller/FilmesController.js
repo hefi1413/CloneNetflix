@@ -1,6 +1,6 @@
 //  SCRIPT CONTROLLER
 
-const Filmes = require('../models/filmes');
+const Filmes = require('../models/filmes.js');
 
 var message = '';
 
@@ -33,6 +33,7 @@ var filmesController = {
     console.log(req.method + ' ' + req.url);
 
     let _filme = req.body;
+    console.log(_filme)
     try {
       // verifica se filme ja esta cadastrado
       let filme = await Filmes.findOne({ where: { nome: _filme.nome } });
