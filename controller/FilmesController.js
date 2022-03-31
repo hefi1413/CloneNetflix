@@ -45,8 +45,6 @@ var filmesController = {
         return;
       }
 
-      //console.log('filme: ', filme);
-
       // adiciona filme
       Filmes.create(_filme)
         .then(() => {
@@ -58,8 +56,6 @@ var filmesController = {
         })
         .catch(err => {
           message = `Não foi possível adicionar filme! \r\n ${err}`;
-
-          // console.log('err : ', message);
 
           throw new Error(message);
         });
@@ -105,14 +101,10 @@ var filmesController = {
         .then(result => {
           message = `Sucesso ! Filme alterado com sucesso.`;
 
-          //console.log( 'message:', result );
-
           res.redirect('/');
         })
         .catch(err => {
           message = `Erro ! Não foi possível aletrar filme. \r\n ${err}`;
-
-          //console.log( 'Error:', err );
 
           throw new Error(message);
         });
@@ -144,8 +136,6 @@ var filmesController = {
         })
         .catch(err => {
           message = `Não foi possível deletar o filme. \r\n ${err}`;
-
-          //console.log( 'Error:', err );
 
           throw new Error(message);
         });
