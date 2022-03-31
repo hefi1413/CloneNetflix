@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="./img/icons/netflix__icon.png">
+    <link rel="stylesheet" href="./style/style__cadastro.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <title>Deletar Filme / Série</title>
+</head>
+<body>
+    
+    <nav>
+        <header>
+            <img class="logo" src="./img/icons/logo.png" alt="logo__netflix">
+            <div class="lista">
+                <a class="lista__navegacao" href="/">Inicio</a>
+                <a class="lista__navegacao" href="#">Series</a>
+                <a class="lista__navegacao" href="#">Filmes</a>
+                <a class="lista__corrent" href="#">Cadastrar</a>
+            </div>
+
+        </header>
+            
+    </nav>
+
+    <main>
+        <div class="container">
+            <form method="POST" action="/deletar/<%= filme.id %>">
+                <div class="item">
+                    <h2>Dejesa realmente deletar?</h2>
+                    <span><%= filme.nome %></span>
+                </div>
+                <div class="item">
+                    <img src="<%= filme.imagem %>" alt="capa do filme">
+                </div>
+                <div class="item">
+                    <a href="/filmes/<%= filme.id %>">Cancelar</a>
+                    <Button type="submit">DELETAR</Button>
+                </div>    
+            </form>
+        </div>
+    </main>
+    <footer id='footer'>
+        <center>
+           <small>
+            ©2022 Netflix. TM, ®Netflix.
+        </small> 
+        </center>
+    </footer>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>
