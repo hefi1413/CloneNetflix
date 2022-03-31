@@ -14,7 +14,7 @@ CREATE TABLE Filmes (
   Ano		    INTEGER NOT NULL,
   Genero	  VARCHAR(15) NOT NULL,
   Descricao VARCHAR(250) ,
-  Tipo		  INTEGER,
+  Tipo		  VARCHAR(15) NOT NULL,
   Imagem	  VARCHAR(200) NOT NULL,
 
 PRIMARY KEY (id) );

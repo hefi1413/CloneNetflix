@@ -8,7 +8,6 @@ var filmesController = {
   // Exibe todos titulos cadastrados no catalogo
   // --------------------------
   listar: async function (req, res, next) {
-    console.log(req.method + ' ' + req.url);
 
     const fileName = 'index.ejs';
 

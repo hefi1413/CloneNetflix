@@ -16,30 +16,60 @@ var Filmes = connection.define(
     codigo: {
       type: Sequelize.INTEGER,
       allowNull: false,
+      validate: {
+        notEmpty: true,
+        isInt: true, 
+      }     
     },
+
     nome: {
       type: Sequelize.STRING,
       allowNull: false,
+      validate: {
+        notEmpty: true, 
+      }    
     },
+
     ano: {
       type: Sequelize.INTEGER,
       allowNull: false,
+      validate: {
+        notEmpty: true,
+        isInt: true, 
+      }    
     },
+
     genero: {
       type: Sequelize.STRING,
       allowNull: false,
+      validate: {
+        notEmpty: true,
+      }    
     },
+
     descricao: {
       type: Sequelize.STRING,
       allowNull: false,
     },
+
     tipo: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
       allowNull: false,
+      validate: {
+        notEmpty: true,
+        isLowercase: true,
+        isIn: [['filme', 'serie']],
+      }    
     },
+
     imagem: {
       type: Sequelize.STRING,
       allowNull: false,
+      validate: {
+        notEmpty: true,
+        isUrl: true,
+      }
+      
     },
   },
   {
