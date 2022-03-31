@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize');
+const sequelize = require('sequelize');
 const connection = require('./database/db.js');
 
 //
@@ -8,43 +8,43 @@ var Filmes = connection.define(
   'filmes',
   {
     id: {
-      type: Sequelize.INTEGER,
+      type: sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
 
     codigo: {
-      type: Sequelize.INTEGER,
+      type: sequelize.INTEGER,
       allowNull: false,
     },
 
     nome: {
-      type: Sequelize.STRING,
+      type: sequelize.STRING,
       allowNull: false,
     },
 
     ano: {
-      type: Sequelize.INTEGER,
+      type: sequelize.INTEGER,
       allowNull: false,
     },
 
     genero: {
-      type: Sequelize.STRING,
+      type: sequelize.STRING,
       allowNull: false,
     },
 
     descricao: {
-      type: Sequelize.STRING,
+      type: sequelize.STRING,
       allowNull: false,
     },
 
     tipo: {
-      type: Sequelize.STRING,
+      type: sequelize.STRING,
       allowNull: false,      
     },
 
     imagem: {
-      type: Sequelize.STRING,
+      type: sequelize.STRING,
       allowNull: false,
     },
   },

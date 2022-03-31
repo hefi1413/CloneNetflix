@@ -1,10 +1,10 @@
 //  SCRIPT DEFINIÇÃO DB
 
-const Sequelize = require('sequelize');
+const sequelize = require('sequelize');
 
 //  DEFINIE/CRIA BANCO DE DADOS
 
-var connection = new Sequelize(process.env.DB_BASE, process.env.DB_USER, process.env.DB_PASS, {
+var connection = new sequelize(process.env.DB_BASE, process.env.DB_USER, process.env.DB_PASS, {
   host: process.env.DB_HOST,
   dialect: 'postgres',
   ssl: true,
