@@ -13,11 +13,6 @@ var Filmes = connection.define(
       autoIncrement: true,
     },
 
-    codigo: {
-      type: sequelize.INTEGER,
-      allowNull: false,
-    },
-
     nome: {
       type: sequelize.STRING,
       allowNull: false,

@@ -9,7 +9,6 @@
 
 CREATE TABLE Filmes (
   Id 		    INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
-  Codigo 	  INTEGER NOT NULL,
   Nome 		  VARCHAR(100)  NOT NULL,
   Ano		    INTEGER NOT NULL,
   Genero	  VARCHAR(15) NOT NULL,
@@ -20,10 +19,10 @@ CREATE TABLE Filmes (
 PRIMARY KEY (id) );
 
 
--- DROP INDEX filmes_codigo;
+-- DROP INDEX filmes_Nome;
 
-CREATE INDEX filmes_codigo(
-  ON Filmes(Codigo);
+CREATE INDEX filmes_Nome(
+  ON Filmes(Nome);
 )
   
 
