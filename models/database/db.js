@@ -22,6 +22,8 @@ var connection = new Sequelize(process.env.DB_BASE, process.env.DB_USER, process
     acquire: 30000,
     idle: 10000,
   },
+logging: false
+
 });
 
 module.exports = connection;
