@@ -108,4 +108,4 @@ app.get('/cadastro', (req, res) => {
   res.render('cadastro.ejs');
 });
 
-app.listen(port || process.env.PORT, () => console.log(`Servidor rodando em http://localhost:${port}`));
+app.listen(process.env.PORT || port, () => console.log(`Servidor rodando em http://localhost:${port}`));
