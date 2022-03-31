@@ -56,13 +56,13 @@ var filmesController = {
 
           res.redirect('/');
         })
-        // .catch(err => {
-        //   message = `Não foi possível adicionar filme! \r\n ${err}`;
+        .catch(err => {
+          message = `Não foi possível adicionar filme! \r\n ${err}`;
 
-        //   // console.log('err : ', message);
+          // console.log('err : ', message);
 
-        //   throw new Error(message);
-        // });
+          throw new Error(message);
+        });
     } catch (err) {
       message = 'Erro ! ' + err.message;
 
