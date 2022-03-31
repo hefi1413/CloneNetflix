@@ -1,6 +1,4 @@
-//
 //  SCRIPT CONTROLLER
-//
 
 const Filmes = require('../models/filmes');
 
