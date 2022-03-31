@@ -22,8 +22,10 @@ PRIMARY KEY (id) );
 
 -- DROP INDEX filmes_codigo;
 
-CREATE INDEX filmes_codigo
+CREATE INDEX filmes_codigo(
   ON Filmes(Codigo);
+)
+  
 
 
 -- exemplo para testes

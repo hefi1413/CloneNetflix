@@ -12,6 +12,7 @@ var Filmes = connection.define(
       primaryKey: true,
       autoIncrement: true,
     },
+    
     codigo: {
       type: Sequelize.INTEGER,
       allowNull: false,
@@ -25,7 +26,7 @@ var Filmes = connection.define(
       allowNull: false,
     },
     genero: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
       allowNull: false,
     },
     descricao: {
@@ -33,7 +34,7 @@ var Filmes = connection.define(
       allowNull: false,
     },
     tipo: {
-      type: Sequelize.STRING,
+      type: Sequelize.INTEGER,
       allowNull: false,
     },
     imagem: {
