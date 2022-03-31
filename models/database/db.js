@@ -14,13 +14,21 @@ var connection =new Sequelize(
     {
       host: process.env.DB_HOST,
       dialect: 'postgres',
+      ssl: true,
+  protocol: "postgres",
+  logging: true,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    }
+  },
       pool: {
           max: 5,
           min: 0,
           acquire: 30000,
           idle: 10000
-        },
-      logging: false
+        }
 });
 
 
