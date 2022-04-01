@@ -57,3 +57,46 @@ header .lista .lista__corrent {
   cursor: default;
 }
 
+.main__cadastro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+}
+
+main section form{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+main section form input{
+  margin-top: 0.3rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+#img__cadastrar{
+  /* background-color: #e50914;
+  border: solid 1px #000000;
+  border-radius: 8px;
+  padding: 0.5rem; */
+  width: 100%;
+}
+
+#btnCadastrar{
+  background-color: #e50914;
+  border: solid 1px #000000;
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 50%;
+  cursor: pointer;
+}
+
+#footer{
+  bottom: 0;
+}

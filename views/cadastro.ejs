@@ -29,8 +29,8 @@
     <main>
 
         
-        <section id="cadastro">
-            <h2>CADASTRO DE NOVO FILME OU SÉRIE</h2>
+        <section class="main__cadastro" id="cadastro">
+            <h2>CADASTRO DE UM NOVO FILME OU SÉRIE</h2>
             <form action="/add" method="post">
 
                 <label for="nome">Nome: </label>
@@ -51,8 +51,12 @@
                 <label for="genero">Genero: </label>
                 <input type="text" id="genero" name="genero" required="required">
 
+                <!-- <center>
+                    <img id="img__cadastrar" src="./img/icons/cadastrar.png" alt="logo__netflix" type="submit">
+                </center> -->
+                
                 <center>
-                <button id="btnCadastrar" type="submit">Cadastrar</button>    
+                    <button id="btnCadastrar" type="submit"><img id="img__cadastrar" src="./img/icons/cadastrar.png" alt="logo__netflix"></button>    
                 </center>
 
             </form>
