@@ -58,7 +58,7 @@ app.get('/', filmesController.listar);
 
 app.post('/add', filmesController.adicionar);
 
-app.post('/editar', filmesController.editar);
+app.post('/editar/:id', filmesController.editar);
 
 app.post('/deletar/:id', filmesController.deletar);
 
@@ -98,7 +98,7 @@ app.post("/add",(req, res) => {
 
 app.get('/detalhes/:id', (req, res) => {
   const id = req.params.id;
-  const filme = catalogo[id - 1];
+  const filme = filmesController.listar[id];
   res.render('detalhes.ejs', { filme: filme });
 });
 

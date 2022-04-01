@@ -55,7 +55,8 @@
                 <% filmes.forEach(item => { %>                
         
                 <div class="item">
-                    <img class="box-filme" src= <%= item.imagem %> >
+                    <a href="/detalhes/<%= item.id %>"><img class="box-filme" src= <%= item.imagem %> ></a>
+                    
                 </div>
 
                 <% }) %>
