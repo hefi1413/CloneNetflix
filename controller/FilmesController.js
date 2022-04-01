@@ -8,7 +8,6 @@ var filmesController = {
   // Exibe todos titulos cadastrados no catalogo
   // --------------------------
   listar: async function (req, res, next) {
-
     const fileName = 'index.ejs';
 
     try {
@@ -33,7 +32,7 @@ var filmesController = {
     console.log(req.method + ' ' + req.url);
 
     let _filme = req.body;
-    console.log(_filme)
+    console.log(_filme);
     try {
       // verifica se filme ja esta cadastrado
       let filme = await Filmes.findOne({ where: { nome: _filme.nome } });
@@ -41,6 +40,7 @@ var filmesController = {
       if (filme) {
         // filme ja existe catalogo
         message = `Erro! Filme ja existe no catálogo!`;
+        console.log(message);
         res.redirect('/');
         return;
       }
