@@ -94,13 +94,6 @@ app.post("/add",(req, res) => {
 })
 */
 
-app.get('/detalhes/:id', async (req, res) => {
-  const id = req.params.id;
-  const filme = await Filmes.findByPk(req.params.id);
-  console.log(`TESTE ${filme}`);
-
-  res.render('detalhes', { filme: filme });
-});
 
 app.get('/', (req, res) => {
   res.render('index.ejs');
@@ -108,6 +101,21 @@ app.get('/', (req, res) => {
 
 app.get('/cadastro', (req, res) => {
   res.render('cadastro.ejs');
+});
+
+app.get('/detalhes/:id', async (req, res) => {
+  const filme = await Filmes.findByPk(req.params.id);
+  res.render('detalhes', { filme: filme });
+});
+
+app.get('/editar/:id', async (req, res) => {
+  const filme = await Filmes.findByPk(req.params.id);
+  res.render('editar', { filme: filme });
+});
+
+app.get('/deletar/:id', async (req, res) => {
+ const filme = await Filmes.findByPk(req.params.id);
+ res.render('deletar', { filme: filme });
 });
 
 app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
