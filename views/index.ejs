@@ -56,11 +56,32 @@
             
             <div class="owl-carousel owl-theme">
                 <% filmes.forEach(item => { %>                
-                    
-                <div class="item">
-                    <a href="/detalhes/<%= item.id %>"><img class="box-filme" src= <%= item.imagem %> ></a>
-                    
-                </div>
+                    <% if (item.tipo == 'filme') { %>
+                        <div class="item">
+                            <a href="/detalhes/<%= item.id %>"><img class="box-filme" src= <%= item.imagem %> ></a>
+                            
+                        </div>
+                    <% } %>
+
+                <% }) %>
+        
+            </div>
+        
+        </div>
+
+        <div class="carrosel-filmes">
+            <h2>
+                Séries
+            </h2>
+            
+            <div class="owl-carousel owl-theme">
+                <% filmes.forEach(item => { %>                
+                    <% if (item.tipo == 'serie') { %>
+                        <div class="item">
+                            <a href="/detalhes/<%= item.id %>"><img class="box-filme" src= <%= item.imagem %> ></a>
+                            
+                        </div>
+                    <% } %>
 
                 <% }) %>
         

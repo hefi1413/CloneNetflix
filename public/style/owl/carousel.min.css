@@ -53,7 +53,7 @@
 }
 .owl-carousel .owl-dots.disabled,
 .owl-carousel .owl-nav.disabled {
-  display: felx;
+  display: none;
 }
 .no-js .owl-carousel,
 .owl-carousel.owl-loaded {

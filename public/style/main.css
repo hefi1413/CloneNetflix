@@ -121,6 +121,12 @@ header .lista .lista__corrent {
 
 .carrosel-filmes{
   margin-left: 4%;
+  margin-top: 5rem;
+}
+
+main{
+  margin-top: -10rem;
+
 }
 
 main h2 {
