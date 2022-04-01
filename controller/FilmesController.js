@@ -17,16 +17,17 @@ var filmesController = {
     try {
       let filmes = await Filmes.findAll({ raw: true });
 
-      //console.table( filmes );
+      //console.log( filmes );
 
       setTimeout(() => {
         message = '';
       }, 5000);
 
-      res.render(fileName, { filmes: filmes, message: message });
+      res.render(fileName, { 'filmes': filmes, 'message': message });
     } catch (err) {
-      message = `Erro ! ${err}`;
-      res.status(500).send(message);
+      console.log( `Erro ! ${err}`);
+
+      res.status(500).send('Não foi possível exibir os dados.');
     }
   },
 
@@ -37,38 +38,21 @@ var filmesController = {
 
     let _filme = req.body;
     try {
-      // verifica se filme ja esta cadastrado
-      let filme = await Filmes.findOne({ where: { codigo: _filme.codigo } });
-
-      if (filme) {
-        // filme ja existe catalogo
-        message = `Erro! Filme ja existe no catálogo!`;
-        res.redirect('/');
-        return;
-      }
-
-      //console.log('filme: ', filme);
-
       // adiciona filme
       Filmes.create(_filme)
         .then(() => {
           message = `Parabéns! Filme adicionado com sucesso!`;
-
-          console.log('message: ', message);
-
           res.redirect('/');
         })
         .catch(err => {
-          message = `Não foi possível adicionar filme! \r\n ${err}`;
+          message = `Não foi possível adicionar filme!`;
 
           // console.log('err : ', message);
 
-          throw new Error(message);
+          throw new Error(err.message);
         });
     } catch (err) {
-      message = 'Erro ! ' + err.message;
-
-      console.log(message);
+      console.log('Erro ! ' + err.message);
 
       res.redirect('/');
     }
@@ -102,8 +86,7 @@ var filmesController = {
       filme.tipo = _filme.tipo;
       filme.imagem = _filme.imagem;
 
-      await filme
-        .save()
+      filme.save()
         .then(result => {
           message = `Sucesso ! Filme alterado com sucesso.`;
 
@@ -112,20 +95,68 @@ var filmesController = {
           res.redirect('/');
         })
         .catch(err => {
-          message = `Erro ! Não foi possível aletrar filme. \r\n ${err}`;
+          message = `Erro ! Não foi possível aletrar filme.`;
 
           //console.log( 'Error:', err );
 
-          throw new Error(message);
+          throw new Error(err.message);
         });
     } catch (err) {
-      message = 'Erro ! ' + err.message;
-
-      console.log(message);
+      console.log('Erro ! ' + err.message );
 
       res.redirect('/');
     }
   },
+
+
+  // renderiza tela detalhes
+  detalhes: async function (req, res, next) {
+    console.log(req.method + ' ' + req.url);
+
+    let flmeid = req.params.id;
+    try {
+      // localiza filme no BD
+      let filme = await Filmes.findByPk(flmeid);
+
+      if (!filme) {
+        message = `Erro ! O filme id:${flmeid} não foi localizado !`;
+        res.redirect('/');
+        return;
+      };
+      res.render('detalhes.ejs', { 'filme': filme });
+
+    } catch (err) {
+      console.log('Erro ! ' + err.message );
+
+      res.redirect('/');
+    }
+  },
+
+
+
+  // renderiza a tela de edição
+  render: async function (req, res, next) {
+    console.log(req.method + ' ' + req.url);
+
+    let _filme = req.body;
+    try {
+      // localiza filme no BD
+      let filme = await Filmes.findByPk(_filme.id);
+
+      if (!filme) {
+        message = `Erro ! O filme ${_filme.nome} não foi localizado !`;
+        res.redirect('/');
+        return;
+      };
+      res.render('cadastro.ejs', { 'filme': filme });
+
+    } catch (err) {
+      console.log('Erro ! ' + err.message );
+
+      res.redirect('/');
+    }
+  },
+
 
   // Exclui um titulo do catalogo
   // --------------------------
@@ -133,28 +164,32 @@ var filmesController = {
     console.log(req.method + ' ' + req.url);
 
     let filmeId = req.params.id;
+
     try {
       // localiza filme no BD
       var filme = await Filmes.findByPk(filmeId);
 
-      filme
-        .destroy()
+      if (!filme) {
+        message = `Erro ! O filme ${filmeId} não foi localizado !`;
+        res.redirect('/');
+        return;
+      }
+
+      filme.destroy()
         .then(() => {
-          message = `Sucesso ! Filme deletado com sucesso.`;
+          message = `Filme deletado com sucesso.`;
 
           res.redirect('/');
         })
         .catch(err => {
-          message = `Não foi possível deletar o filme. \r\n ${err}`;
+          message = `Não foi possível deletar o filme.`;
 
           //console.log( 'Error:', err );
 
-          throw new Error(message);
+          throw new Error(err.message);
         });
     } catch (err) {
-      message = 'Erro ! ' + err.message;
-
-      console.log(message);
+      console.log('Erro ! ' + err.message);
 
       res.redirect('/');
     }

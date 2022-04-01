@@ -1,0 +1,43 @@
+
+
+<section id="detalhes">
+    <div style="text-align: center;">
+        <h2> <%= filme.nome %> </h2>
+    </div>
+    
+    <div style="display: flex; gap:25px;margin:0 auto;">
+        <div style="width:400px; height: 400px;margin:10px;">
+            <img style="width: 100%;" src= <%= filme.imagem %> />
+        </div>
+        <div>
+            <h3 class="h3-details"> Descrição </h3>
+            <span class="span-details"> <%= filme.descricao %> </span>
+
+            <h3 class="h3-details"> Tipo </h3>
+            <span> <%= filme.tipo %> </span>
+
+            <h3 class="h3-details"> Gênero </h3>
+            <span> <%= filme.genero %> </span>
+
+            <br>
+            <br>
+
+            <div style="display: flex; gap:25px;">
+                <div style="width:200px; height: 50px;">
+                    <button style="width: 100%; height: 100%; background-color: white;color: blue;border:1px solid blue;"> Editar </button>
+                </div>
+                <div style="width:200px; height: 50px;">
+                    <button id="btnDel" style="width: 100%; height: 100%; background-color: white;color: blue;border:1px solid blue;"> Deletar </button>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="/" > Voltar </a>
+
+        </div>
+    </div>
+
+</section>

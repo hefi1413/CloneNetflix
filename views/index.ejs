@@ -17,15 +17,13 @@
         <header>
             <h2 class="logo">NETFLIX</h2>
             <div class="lista">
-                <a class="lista__corrent" href="#">Inicio</a>
+                <a class="lista__corrent" href="/">Inicio</a>
                 <a class="lista__navegacao" href="#">Series</a>
                 <a class="lista__navegacao" href="#">Filmes</a>
                 <a class="lista__navegacao" href="/cadastro">Cadastrar</a>
             </div>
         </header>
     
-        
-        
         <div class="filme-principal">
             <div class="container">
                 <h3 class="titulo">HOUSE OF CARDS</h3>
@@ -46,15 +44,15 @@
 
     <main>
 
-        
-
         <div class="carrosel-filmes">
             
             <div class="owl-carousel owl-theme">
                 <% filmes.forEach(item => { %>                
         
                 <div class="item">
-                    <img class="box-filme" src= <%= "/img/capas/" + item.imagem %> >
+                    <a href=<%= `/detalhes/${item.id}` %> >
+                        <img class="box-filme" src= <%= item.imagem %> >
+                    </a>                    
                 </div>
 
                 <% }) %>
@@ -64,9 +62,6 @@
         </div>
 
     </main>
-
-
-
 
     <script src="https://kit.fontawesome.com/e52baa07be.js" crossorigin="anonymous"></script>
     <script src="./js/jquery.min.js"></script>

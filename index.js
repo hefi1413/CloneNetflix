@@ -54,9 +54,8 @@ const catalogo = [
 //Rotas //
 
 // consultar
-app.get('/', filmesController.listar, (req, res) => {
-  res.render('index.ejs');
-});
+
+app.get('/', filmesController.listar);
 
 app.post('/add', filmesController.adicionar);
 
@@ -64,6 +63,7 @@ app.post('/editar', filmesController.editar);
 
 app.post('/deletar/:id', filmesController.deletar);
 
+app.get('/detalhes/:id', filmesController.detalhes);
 
 
 /*
@@ -98,14 +98,11 @@ app.post("/add",(req, res) => {
 })
 */
 
-app.get('/detalhes/:id', (req, res) => {
-  const id = req.params.id;
-  const filme = catalogo[id - 1];
-  res.render('detalhes.ejs', { filme: filme });
-});
-
 app.get('/cadastro', (req, res) => {
   res.render('cadastro.ejs');
 });
+
+app.get('/detalhes/editar', filmesController.render );
+
 
 app.listen(port || process.env.PORT, () => console.log(`Servidor rodando em http://localhost:${port}`));

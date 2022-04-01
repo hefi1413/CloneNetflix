@@ -9,13 +9,12 @@
 
 CREATE TABLE Filmes (
   Id 		    INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
-  Codigo 	  INTEGER NOT NULL,
   Nome 		  VARCHAR(100)  NOT NULL,
   Ano		    INTEGER NOT NULL,
-  Genero	  VARCHAR(15) NOT NULL,
-  Descricao VARCHAR(250) ,
-  Tipo		  INTEGER,
-  Imagem	  VARCHAR(200) NOT NULL,
+  Genero	  VARCHAR(25) NOT NULL,
+  Descricao VARCHAR(300) ,
+  Tipo		  VARCHAR(7),
+  Imagem	  VARCHAR(250) NOT NULL,
 
 PRIMARY KEY (id) );
 
@@ -27,6 +26,6 @@ CREATE INDEX filmes_codigo
 
 
 -- exemplo para testes
-INSERT INTO Filmes(Codigo, Nome, Ano, Genero, Descricao, Tipo, imagem) 
-  VALUES(4, 'Braking Bad', 2019, 'Drama', 'A Breaking Bad Movie é um filme norte-americano de drama lançado em 2019', 1, 'mini4.jpg');
+INSERT INTO Filmes(Nome, Ano, Genero, Descricao, Tipo, imagem) 
+  VALUES('Braking Bad', 2019, 'Drama', 'A Breaking Bad Movie é um filme norte-americano de drama lançado em 2019', "filme", 'mini4.jpg');
 

@@ -8,6 +8,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 /* elementos base */
 body {
   background-color: var(--preta);
@@ -16,7 +17,7 @@ body {
   margin-left: 3rem;
 }
 
-nav{
+nav {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/capa-house.jpg');
   width: 100%;
   min-height: 40rem;
@@ -27,7 +28,7 @@ header {
   flex-direction: row;
   align-items: center;
   gap: 2rem;
-  
+
 }
 
 header .logo {
@@ -60,7 +61,7 @@ header .lista .lista__corrent {
 /* filme rgb(255, 254, 254)cipal */
 .filme-principal {
   font-size: 16px;
-  
+
   height: 400px;
   background-size: cover;
   display: flex;
@@ -114,4 +115,8 @@ header .lista .lista__corrent {
   height: 100%;
   width: 100%;
   display: block;
+}
+
+.h3-details {
+  margin-top: 40px;
 }
