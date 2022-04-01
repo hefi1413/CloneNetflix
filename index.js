@@ -94,9 +94,10 @@ app.post("/add",(req, res) => {
 })
 */
 
-app.get('/detalhes/:id', (req, res) => {
+app.get('/detalhes/:id', async (req, res) => {
   const id = req.params.id;
-  const filme = Filmes.find(filme => filme.id == id);
+  const filme = await Filmes.findByPk(req.params.id);
+  console.log(`TESTE ${filme}`);
 
   res.render('detalhes', { filme: filme });
 });
