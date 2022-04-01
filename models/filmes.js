@@ -1,40 +1,40 @@
-const sequelize = require('sequelize');
+const Sequelize = require('sequelize');
 const connection = require('./database/db.js');
 
 //
 //  DEFINIE/CRIA MODELO/TABELA USUARIOS
 //
-var Filmes = connection.define(
+const Filmes = connection.define(
   'filmes',
   {
     id: {
-      type: sequelize.INTEGER,
+      type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
 
     nome: {
-      type: sequelize.STRING,
+      type: Sequelize.STRING,
       allowNull: false,
     },
 
     ano: {
-      type: sequelize.INTEGER,
+      type: Sequelize.INTEGER,
       allowNull: false,
     },
 
     genero: {
-      type: sequelize.STRING,
+      type: Sequelize.STRING,
       allowNull: false,
     },
 
     descricao: {
-      type: sequelize.STRING,
+      type: Sequelize.STRING,
       allowNull: false,
     },
 
     tipo: {
-      type: sequelize.STRING,
+      type: Sequelize.STRING,
       allowNull: false,
       validate: {
         isIn: [['filme', 'serie']],
@@ -42,7 +42,7 @@ var Filmes = connection.define(
     },
 
     imagem: {
-      type: sequelize.STRING,
+      type: Sequelize.STRING,
       allowNull: false,
     },
   },

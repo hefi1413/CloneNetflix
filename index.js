@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-const Filme = require('./models/filmes');
+const Filmes = require('./models/filmes');
 const app = express();
 const port = process.env.PORT || 3000;
 const env = require('dotenv');
@@ -62,8 +62,6 @@ app.post('/editar/:id', filmesController.editar);
 
 app.post('/deletar/:id', filmesController.deletar);
 
-
-
 /*
 app.get('/', (req, res) => {
   res.render('index');
@@ -98,8 +96,9 @@ app.post("/add",(req, res) => {
 
 app.get('/detalhes/:id', (req, res) => {
   const id = req.params.id;
-  const filme = filmesController.listar[id];
-  res.render('detalhes.ejs', { filme: filme });
+  const filme = Filmes.find(filme => filme.id == id);
+
+  res.render('detalhes', { filme: filme });
 });
 
 app.get('/', (req, res) => {
