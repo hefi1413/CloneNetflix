@@ -18,7 +18,7 @@ var filmesController = {
       setTimeout(() => {
         message = '';
       }, 5000);
-
+  
       res.render(fileName, { 'filmes': filmes, 'message': message });
     } catch (err) {
       console.log( `Erro ! ${err}`);
@@ -27,7 +27,20 @@ var filmesController = {
     }
   },
 
-  // Adiciona/cadastra um titulo no catalogo
+  // renderiza tela de cadastro
+  // --------------------------
+  cadastro: async function (req, res, next) {
+    console.log(req.method + ' ' + req.url);
+
+    setTimeout(() => {
+      message = '';
+    }, 5000);
+
+    res.render('cadastro', { 'message': message });
+
+  },
+
+  // Adiciona/cadastra um titulo no catalogo (/cadastro/add)
   // --------------------------
   adicionar: async function (req, res, next) {
     console.log(req.method + ' ' + req.url);
@@ -42,7 +55,7 @@ var filmesController = {
         // filme ja existe catalogo
         message = `Erro! Filme ja existe no catálogo!`;
         console.log(message);
-        res.redirect('/');
+        res.redirect('/cadastro');
         return;
       }
 
@@ -50,7 +63,8 @@ var filmesController = {
       Filmes.create(_filme)
         .then(() => {
           message = `Parabéns! Filme adicionado com sucesso!`;
-          res.redirect('/');
+
+          res.redirect('/cadastro');
         })
         .catch(err => {
           message = `Não foi possível adicionar filme!`;
@@ -60,56 +74,9 @@ var filmesController = {
     } catch (err) {
       console.log('Erro ! ' + err.message);
 
-      res.redirect('/');
+      res.redirect('/cadastro');
     }
   },
-
-  // Altera um titulo cadastrado no catalogo
-  // --------------------------
-  editar: async function (req, res, next) {
-    console.log(req.method + ' ' + req.url);
-
-    let _filme = req.body;
-    try {
-      // localiza filme no BD
-      var filme = await Filmes.findByPk(_filme.id);
-
-      if (!filme) {
-        message = `Erro ! O filme ${_filme.nome} não foi localizado !`;
-        res.redirect('/');
-        return;
-      }
-      //
-      // Altera filme
-
-      // prevem o servidor de aletrar o id do filme
-      delete filme.id;
-
-      filme.nome = _filme.nome;
-      filme.ano = _filme.ano;
-      filme.genero = _filme.genero;
-      filme.descricao = _filme.descricao;
-      filme.tipo = _filme.tipo;
-      filme.imagem = _filme.imagem;
-
-      filme.save()
-        .then(result => {
-          message = `Sucesso ! Filme alterado com sucesso.`;
-
-          res.redirect('/');
-        })
-        .catch(err => {
-          message = `Erro ! Não foi possível aletrar filme.`;
-
-          throw new Error(err.message);
-        });
-    } catch (err) {
-      console.log('Erro ! ' + err.message );
-
-      res.redirect('/');
-    }
-  },
-
 
   // renderiza tela detalhes
   detalhes: async function (req, res, next) {
@@ -125,40 +92,100 @@ var filmesController = {
         res.redirect('/');
         return;
       };
-      res.render('detalhes.ejs', { 'filme': filme });
+
+      setTimeout(() => {
+        message = '';
+      }, 5000);
+  
+      res.render('detalhes.ejs', { 'filme': filme, 'message': message });
 
     } catch (err) {
+      message = `Erro ! Não foi possível exibir detalhes do filme.`;
+
       console.log('Erro ! ' + err.message );
 
       res.redirect('/');
     }
   },
 
-
-
-  // renderiza a tela de edição
-  render: async function (req, res, next) {
+  // renderiza a tela de edição (/detalhes/editar)
+  editar: async function (req, res, next) {
     console.log(req.method + ' ' + req.url);
+
+    let filmeid = req.params.id;
+    try {
+      // localiza filme no BD
+      let filme = await Filmes.findByPk(filmeid);
+
+      if (!filme) {
+        message = `Erro ! O filme id:${filmeid} não foi localizado !`;
+        res.redirect(`/detalhes/${filmeid}`);
+        return;
+      };
+
+      setTimeout(() => {
+        message = '';
+      }, 5000);
+  
+      res.render('editar', { 'filme': filme, 'message': message });
+
+    } catch (err) {
+      message = `Erro ! Não foi possível editar filme.`;
+
+      console.log('Erro ! ' + err.message );
+
+      res.redirect(`/detalhes/${filmeid}`);
+    }
+  },
+
+
+  // Altera um titulo cadastrado no catalogo
+  // --------------------------
+  alterar: async function (req, res, next) {
+    console.log(req.method + ' ' + req.url);
+
+    //console.log('req.body',  req.body );
 
     let _filme = req.body;
     try {
       // localiza filme no BD
-      let filme = await Filmes.findByPk(_filme.id);
+      var filme = await Filmes.findByPk(_filme.id);
 
       if (!filme) {
         message = `Erro ! O filme ${_filme.nome} não foi localizado !`;
-        res.redirect('/');
-        return;
-      };
-      res.render('cadastro.ejs', { 'filme': filme });
 
+        console.log( message );
+
+        res.redirect(`/detalhes/${_filme.id}`);
+        return;
+      }
+      //
+      // Altera filme
+
+      // prevem o servidor de aletrar o id do filme
+      delete filme.id;
+
+      filme.nome = _filme.nome;
+      filme.descricao = _filme.descricao;
+      filme.imagem = _filme.imagem;
+
+      filme.save()
+        .then(result => {
+          message = `Sucesso ! Filme alterado com sucesso.`;
+
+          res.redirect(`/editar/${_filme.id}`);
+        })
+        .catch(err => {
+          message = `Erro ! Não foi possível aletrar filme.`;
+
+          throw new Error(err.message);
+        });
     } catch (err) {
       console.log('Erro ! ' + err.message );
 
-      res.redirect('/');
+      res.redirect(`/editar/${_filme.id}`);
     }
   },
-
 
   // Exclui um titulo do catalogo
   // --------------------------

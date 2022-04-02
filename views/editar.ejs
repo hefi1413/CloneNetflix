@@ -29,22 +29,30 @@
 
 <main>
     <div class="container">
-        <span><% if(mensagem != ""){ mensagem } %></span>
-        <form method="POST" action="/editar/<%= filme.id %>">
-            <div class="item">
-                <input type="text" placeholder="Digite o nome do filme" name="nome" value="<%= filme.nome %>" required>
-            </div>
-            <div class="item">
-                <textarea placeholder="Digite a descrição do filme" name="descricao" ><%= filme.descricao %></textarea>
-            </div>
-            <div class="item">
-                <input type="text" placeholder="Digite a URL da capa" name="imagem" value="<%= filme.imagem %>" required>
-            </div>
-            <div class="item">
-                <Button type="submit">Salvar alteração</Button>
-            </div>
-            
-        </form>
+        <% if(message){ %>
+            <span><%= message %></span>
+        <% } %>
+        <section>
+            <h2>EDITAR FILME OU SÉRIE</h2>
+            <form method="POST" action="/editar">
+                <div class="item">
+                    <label for="nome">Nome: </label><br>
+                    <input type="text" placeholder="Digite o nome do filme" name="nome" value="<%= filme.nome %>" required><br>
+                </div>
+                <div class="item">
+                    <label for="descricao">Descrição: </label><br>
+                    <textarea placeholder="Digite a descrição do filme" name="descricao" ><%= filme.descricao %></textarea><br>
+                </div>
+                <div class="item">
+                    <label for="imagem">Link da Imagem: </label><br>
+                    <input type="text" placeholder="Digite a URL da capa" name="imagem" value="<%= filme.imagem %>" required><br>
+                </div>
+                <input type="hidden" name="id" id="id" value="<%= filme.id %>">
+                <div class="item">
+                    <Button type="submit">Salvar alteração</Button>
+                </div>
+            </form>
+        </section>
     </div>
 </main>
 <footer id='footer'>
