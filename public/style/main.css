@@ -155,3 +155,14 @@ footer {
   gap: 0.5rem;
 
 }
+
+.grupo__logo{
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  gap: 0.3rem;
+}
+
+.grupo__logo img{
+  max-width: 3rem;
+}
