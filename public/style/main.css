@@ -16,9 +16,19 @@ body {
 }
 
 nav{
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/capa-house.jpg');
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/capa-house.jpg'); */
   width: 100%;
   min-height: 46rem;
+}
+
+iframe {
+  display: flex;
+  position: absolute;
+  top: -7.5rem;
+  z-index: -100;
+  width: 100%;
+  min-height: 120%;
+  object-fit: cover;
 }
 
 header {
@@ -125,7 +135,7 @@ header .lista .lista__corrent {
 }
 
 main{
-  margin-top: -10rem;
+  margin-top: -15rem;
 
 }
 
@@ -144,6 +154,8 @@ footer {
   padding-bottom: 1rem;
 }
 
+
+
 .grupo{
   display: flex;
   flex-direction: row;
@@ -155,6 +167,7 @@ footer {
 .grupo__persona{
   display: flex;
   flex-direction: column;
+  max-width: 10rem;
   font-weight: 800;
   gap: 0.15rem;
   font-size: 1rem;
