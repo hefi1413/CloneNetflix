@@ -52,7 +52,7 @@
             
             <div class="owl-carousel owl-theme">
                 <% filmes.forEach(item => { %>                
-                    <% if (item.tipo == 'filme') { %>
+                    <% if (item.tipo.toLowerCase() == 'filme') { %>
                         <div class="item">
                             <a href="/detalhes/<%= item.id %>"><img class="box-filme" src= <%= item.imagem %> ></a>
                             
@@ -72,7 +72,7 @@
             
             <div class="owl-carousel owl-theme">
                 <% filmes.forEach(item => { %>                
-                    <% if (item.tipo == 'serie') { %>
+                    <% if (item.tipo.toLowerCase() == 'serie') { %>
                         <div class="item">
                             <a href="/detalhes/<%= item.id %>"><img class="box-filme" src= <%= item.imagem %> ></a>
                             

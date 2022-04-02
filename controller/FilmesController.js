@@ -13,7 +13,7 @@ var filmesController = {
     try {
       let filmes = await Filmes.findAll({ raw: true });
 
-      //console.log( filmes );
+      //console.table( filmes );
 
       setTimeout(() => {
         message = '';
@@ -55,7 +55,7 @@ var filmesController = {
         .catch(err => {
           message = `Não foi possível adicionar filme!`;
 
-          throw new Error(message);
+          throw new Error(err.message);
         });
     } catch (err) {
       console.log('Erro ! ' + err.message);
@@ -101,7 +101,7 @@ var filmesController = {
         .catch(err => {
           message = `Erro ! Não foi possível aletrar filme.`;
 
-          throw new Error(message);
+          throw new Error(err.message);
         });
     } catch (err) {
       console.log('Erro ! ' + err.message );
@@ -186,7 +186,7 @@ var filmesController = {
         .catch(err => {
           message = `Não foi possível deletar o filme.`;
 
-          throw new Error(message);
+          throw new Error(err.message);
         });
     } catch (err) {
       console.log('Erro ! ' + err.message);

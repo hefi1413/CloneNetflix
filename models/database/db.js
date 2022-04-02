@@ -9,7 +9,7 @@ var connection = new Sequelize(process.env.DB_BASE, process.env.DB_USER, process
   dialect: 'postgres',
   ssl: true,
   protocol: 'postgres',
-  logging: true,
+  logging: false,
   dialectOptions: {
     ssl: {
       require: true,

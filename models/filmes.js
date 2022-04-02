@@ -35,9 +35,10 @@ const Filmes = connection.define(
     tipo: {
       type: Sequelize.STRING,
       allowNull: false,
+      /*
       validate: {
         isIn: [['filme', 'serie']],
-      }     
+      } */    
     },
 
     imagem: {
