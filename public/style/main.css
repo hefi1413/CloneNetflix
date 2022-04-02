@@ -137,6 +137,7 @@ main h2 {
 footer {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   width: 100%;
   flex-direction: row;
   gap: 2.5rem;
@@ -146,23 +147,47 @@ footer {
 .grupo{
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 0.8rem;
 }
 
 .grupo__persona{
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  font-weight: 800;
+  gap: 0.15rem;
+  font-size: 1rem;
+}
 
+.grupo__persona h4{
+  padding-bottom: 0.7rem;
+}
+
+.grupo__persona h6{
+  padding-bottom: 0.4rem;
+}
+
+.grupo__persona ul{
+  padding-left: 0.9rem;
+  padding-bottom: 0.4rem;
+}
+
+.grupo__persona ul li{
+  font-size: 0.60rem;
+  font-weight: 100;
 }
 
 .grupo__logo{
   display: flex;
   flex-direction: row;
+  justify-content: start;
+  align-items: center;
   text-decoration: none;
+  color: #e50914;
   gap: 0.3rem;
 }
 
 .grupo__logo img{
-  max-width: 3rem;
+  max-width: 2rem;
 }
