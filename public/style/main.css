@@ -14,13 +14,12 @@ body {
   background-color: var(--preta);
   font-family: 'Arial', Times, serif;
   color: white;
-  margin-left: 3rem;
 }
 
 nav {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/capa-house.jpg');
   width: 100%;
-  min-height: 40rem;
+  min-height: 46rem;
 }
 
 header {
@@ -28,14 +27,17 @@ header {
   flex-direction: row;
   align-items: center;
   gap: 2rem;
-
+  height: 68px;
+  padding: 0 4%;
+  
 }
 
 header .logo {
   color: var(--vermelho);
   font-family: 'Arial Black', Times;
-  font-size: 40px;
-  margin-left: 5px;
+  font-size: 25px;
+  height: 35px;
+  width: 100px;
 }
 
 header .lista {
@@ -109,6 +111,7 @@ header .lista .lista__corrent {
 
 .filme-principal .container {
   width: 70%;
+  margin-left: 4%;
 }
 
 .box-filme {
@@ -119,4 +122,40 @@ header .lista .lista__corrent {
 
 .h3-details {
   margin-top: 40px;
+}
+.carrosel-filmes{
+  margin-left: 4%;
+  margin-top: 5rem;
+}
+
+main{
+  margin-top: -10rem;
+
+}
+
+main h2 {
+  margin-top: -5rem;
+  margin-bottom: 0.8rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: row;
+  gap: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.grupo{
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+}
+
+.grupo__persona{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
 }

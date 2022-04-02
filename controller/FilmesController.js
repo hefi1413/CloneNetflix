@@ -1,8 +1,6 @@
-//
 //  SCRIPT CONTROLLER
-//
 
-const Filmes = require('../models/filmes');
+const Filmes = require('../models/filmes.js');
 
 var message = '';
 
@@ -10,8 +8,6 @@ var filmesController = {
   // Exibe todos titulos cadastrados no catalogo
   // --------------------------
   listar: async function (req, res, next) {
-    console.log(req.method + ' ' + req.url);
-
     const fileName = 'index.ejs';
 
     try {
@@ -37,7 +33,19 @@ var filmesController = {
     console.log(req.method + ' ' + req.url);
 
     let _filme = req.body;
+    console.log(_filme);
     try {
+      // verifica se filme ja esta cadastrado
+      let filme = await Filmes.findOne({ where: { nome: _filme.nome } });
+
+      if (filme) {
+        // filme ja existe catalogo
+        message = `Erro! Filme ja existe no catálogo!`;
+        console.log(message);
+        res.redirect('/');
+        return;
+      }
+
       // adiciona filme
       Filmes.create(_filme)
         .then(() => {
@@ -47,9 +55,7 @@ var filmesController = {
         .catch(err => {
           message = `Não foi possível adicionar filme!`;
 
-          // console.log('err : ', message);
-
-          throw new Error(err.message);
+          throw new Error(message);
         });
     } catch (err) {
       console.log('Erro ! ' + err.message);
@@ -90,16 +96,12 @@ var filmesController = {
         .then(result => {
           message = `Sucesso ! Filme alterado com sucesso.`;
 
-          //console.log( 'message:', result );
-
           res.redirect('/');
         })
         .catch(err => {
           message = `Erro ! Não foi possível aletrar filme.`;
 
-          //console.log( 'Error:', err );
-
-          throw new Error(err.message);
+          throw new Error(message);
         });
     } catch (err) {
       console.log('Erro ! ' + err.message );
@@ -184,9 +186,7 @@ var filmesController = {
         .catch(err => {
           message = `Não foi possível deletar o filme.`;
 
-          //console.log( 'Error:', err );
-
-          throw new Error(err.message);
+          throw new Error(message);
         });
     } catch (err) {
       console.log('Erro ! ' + err.message);

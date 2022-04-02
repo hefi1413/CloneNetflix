@@ -27,34 +27,34 @@
             
     </nav>
 
-        <main>
-            <h1>
-               resultado ID <%= filme.id %>
-            </h1>
-            <div class="container">
-                <div class="item">
-                    <img src="<%= filme.imagem %>" alt="capa do filme">
-                </div>
-                <div class="item texto">
-                    <h2><%= filme.nome %></h2>
-                    <h2><%= filme.ano %></h2>
-                    <h2><%= filme.genero %></h2>
-                    <h2><%= filme.tipo %></h2>
-                    <p><%= filme.descricao %></p>
-                    <a href="/editar/<%= filme.id %>">Editar</a>
-                    <a href="/deletar/<%= filme.id %>">Excluir</a>
-                </div>
+<main>
+    <div class="container">
+        <span><% if(mensagem != ""){ mensagem } %></span>
+        <form method="POST" action="/editar/<%= filme.id %>">
+            <div class="item">
+                <input type="text" placeholder="Digite o nome do filme" name="nome" value="<%= filme.nome %>" required>
             </div>
-        </main>
-    
-    <footer id='footer'>
-        <center>
-           <small>
-            ©2022 Netflix. TM, ®Netflix.
-        </small> 
-        </center>
-    </footer>
-    
-    <script src="./js/script.js"></script>
+            <div class="item">
+                <textarea placeholder="Digite a descrição do filme" name="descricao" ><%= filme.descricao %></textarea>
+            </div>
+            <div class="item">
+                <input type="text" placeholder="Digite a URL da capa" name="imagem" value="<%= filme.imagem %>" required>
+            </div>
+            <div class="item">
+                <Button type="submit">Salvar alteração</Button>
+            </div>
+            
+        </form>
+    </div>
+</main>
+<footer id='footer'>
+    <center>
+       <small>
+        ©2022 Netflix. TM, ®Netflix.
+    </small> 
+    </center>
+</footer>
+
+<script src="./js/script.js"></script>
 </body>
 </html>

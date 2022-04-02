@@ -1,0 +1,102 @@
+:root {
+  --vermelho: #e50914;
+  --preta: #141414;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* elementos base */
+body {
+  background-color: var(--preta);
+  font-family: 'Arial', Times, serif;
+  color: white;
+}
+
+nav{
+  width: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  height: 68px;
+  padding: 0 4%;
+  
+}
+
+header .logo {
+  color: var(--vermelho);
+  font-family: 'Arial Black', Times;
+  font-size: 25px;
+  height: 35px;
+  width: 100px;
+}
+
+header .lista {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+header .lista a {
+  text-decoration: none;
+  color: rgb(215, 212, 212);
+}
+
+header a:hover {
+  color: #aaa;
+}
+
+header .lista .lista__corrent {
+  color: rgb(251, 251, 251);
+  cursor: default;
+}
+
+.main__cadastro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+}
+
+main section form{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+main section form input{
+  margin-top: 0.3rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+#img__cadastrar{
+  /* background-color: #e50914;
+  border: solid 1px #000000;
+  border-radius: 8px;
+  padding: 0.5rem; */
+  width: 100%;
+}
+
+#btnCadastrar{
+  background-color: #e50914;
+  border: solid 1px #000000;
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 50%;
+  cursor: pointer;
+}
+
+#footer{
+  bottom: 0;
+}

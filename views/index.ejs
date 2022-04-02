@@ -15,7 +15,8 @@
 <body>
     <nav>
         <header>
-            <h2 class="logo">NETFLIX</h2>
+            <img class="logo" src="./img/icons/logo.png" alt="logo__netflix">
+            <!-- <h2 class="logo">NETFLIX</h2> -->
             <div class="lista">
                 <a class="lista__corrent" href="/">Inicio</a>
                 <a class="lista__navegacao" href="#">Series</a>
@@ -45,23 +46,116 @@
     <main>
 
         <div class="carrosel-filmes">
+            <h2>
+                Filmes
+            </h2>
             
             <div class="owl-carousel owl-theme">
                 <% filmes.forEach(item => { %>                
-        
-                <div class="item">
-                    <a href=<%= `/detalhes/${item.id}` %> >
-                        <img class="box-filme" src= <%= item.imagem %> >
-                    </a>                    
-                </div>
+                    <% if (item.tipo == 'filme') { %>
+                        <div class="item">
+                            <a href="/detalhes/<%= item.id %>"><img class="box-filme" src= <%= item.imagem %> ></a>
+                            
+                        </div>
+                    <% } %>
 
                 <% }) %>
         
-            </div>            
+            </div>
+        
+        </div>
+
+        <div class="carrosel-filmes">
+            <h2>
+                Séries
+            </h2>
+            
+            <div class="owl-carousel owl-theme">
+                <% filmes.forEach(item => { %>                
+                    <% if (item.tipo == 'serie') { %>
+                        <div class="item">
+                            <a href="/detalhes/<%= item.id %>"><img class="box-filme" src= <%= item.imagem %> ></a>
+                            
+                        </div>
+                    <% } %>
+
+                <% }) %>
+        
+            </div>
         
         </div>
 
     </main>
+    <footer>
+
+            <h3>
+                Quem somos:
+            </h3>
+
+            <div class="grupo">
+                <div class="grupo__persona">
+                    <h4>
+                        Alexandre
+                    </h4>
+                    <h6>
+                        linkedin
+
+                    </h6>
+                    <h6>
+                        GitHub
+
+                    </h6>
+    
+                </div>
+                <div class="grupo__persona">
+                    <h4>
+                        Elieldo
+                    </h4>
+                    <h6>
+                        linkedin
+
+                    </h6>
+                    <h6>
+                        GitHub
+
+                    </h6>
+    
+    
+                </div>
+                <div class="grupo__persona">
+                    <h4>
+                        Victor Paim
+                    </h4>
+                    <h6>
+                        linkedin
+
+                    </h6>
+                    <h6>
+                        GitHub
+
+                    </h6>
+    
+    
+                </div>
+    
+            </div>
+            <div class="grupo__persona">
+                <h3>
+                    Projeto
+                </h3>
+                <h6>
+                    Netflix CLone
+                </h6>
+                <h6>
+                    Projeto do curso FullStack da Blue EdTech.
+                </h6>
+
+                
+            </div>
+
+        
+        
+    </footer>
 
     <script src="https://kit.fontawesome.com/e52baa07be.js" crossorigin="anonymous"></script>
     <script src="./js/jquery.min.js"></script>
