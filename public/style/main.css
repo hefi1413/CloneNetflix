@@ -16,7 +16,9 @@ body {
 }
 
 nav{
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/capa-house.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/The-Old-Guard.jpg');
+  background-size: 100% 100%;
+  
   width: 100%;
   min-height: 46rem;
 }
@@ -135,7 +137,7 @@ header .lista .lista__corrent {
 }
 
 main{
-  margin-top: -15rem;
+  margin-top: -10rem;
 
 }
 
