@@ -16,11 +16,23 @@ body {
   color: white;
 }
 
-nav {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/capa-house.jpg');
+nav{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/The-Old-Guard.jpg');
+  background-size: 100% 100%;
+  
   width: 100%;
   min-height: 46rem;
 }
+
+/* #vid {
+  border: 3px solid #ccc;
+  display: flex;
+  position: absolute;
+  z-index: 100;
+  margin-top: -4rem;
+  width: 100%;
+  object-fit: cover;
+} */
 
 header {
   display: flex;
@@ -141,21 +153,60 @@ main h2 {
 footer {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   width: 100%;
   flex-direction: row;
   gap: 2.5rem;
   padding-bottom: 1rem;
 }
 
+
+
 .grupo{
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 0.8rem;
 }
 
 .grupo__persona{
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  max-width: 10rem;
+  font-weight: 800;
+  gap: 0.15rem;
+  font-size: 1rem;
+}
 
+.grupo__persona h4{
+  padding-bottom: 0.7rem;
+}
+
+.grupo__persona h6{
+  padding-bottom: 0.4rem;
+}
+
+.grupo__persona ul{
+  padding-left: 0.9rem;
+  padding-bottom: 0.4rem;
+}
+
+.grupo__persona ul li{
+  font-size: 0.60rem;
+  font-weight: 100;
+}
+
+.grupo__logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  text-decoration: none;
+  color: #e50914;
+  gap: 0.3rem;
+}
+
+.grupo__logo img{
+  max-width: 2rem;
 }
