@@ -36,9 +36,9 @@ app.get('/detalhes/:id', filmesController.detalhes);
 
 
 
-// app.get('/deletar/:id', async (req, res) => {
-//  const filme = await Filmes.findByPk(req.params.id);
-//  res.render('deletar', { filme: filme });
-// });
+app.get('/deletar/:id', async (req, res) => {
+ const filme = await Filmes.findByPk(req.params.id);
+ res.render('deletar', { filme: filme });
+});
 
 app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));

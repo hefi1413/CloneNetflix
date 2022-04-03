@@ -27,151 +27,149 @@
             
     </nav>
 
-        <main>
-            <div class="main__principal">
-                <h1><%= filme.nome %></h1>    
-                <img src="<%= filme.imagem %>" alt="capa do filme <%= filme.nome %>">               
-                
+    <main>
+        <div class="main__principal">
+            <h1><%= filme.nome %></h1>    
+            <img src="<%= filme.imagem %>" alt="capa do filme <%= filme.nome %>">               
+            
+        </div>
+        
+        <div class="main__secundaria">
+            <div class="main__secundaria__h2">
+                <h2> <% if (filme.tipo == 'filme'){ %>
+                    Filme
+                <% } %>
+                <% if (filme.tipo == 'serie'){ %>
+                    Serie
+                <% } %>
+            </h2>
+
             </div>
             
-            <div class="main__secundaria">
-                <div class="main__secundaria__h2">
-                    <h2> <% if (filme.tipo == 'filme'){ %>
-                        Filme
-                    <% } %>
-                    <% if (filme.tipo == 'serie'){ %>
-                        Serie
-                    <% } %>
-                </h2>
+            <div class="main__row">
+                <h2>Ano:</h2> <p><%= filme.ano %></p>
+            </div>
+            <div class="main__row">
+                <h2>Genero:</h2> <p><%= filme.genero %></p>
+            </div>                
+            
+            <h2>Sinopse:</h2> <p id="main__sinopse"><%= filme.descricao %></p>
 
-                </div>
-                
-                <div class="main__row">
-                    <h2>Ano:</h2> <p><%= filme.ano %></p>
-                </div>
-                <div class="main__row">
-                    <h2>Genero:</h2> <p><%= filme.genero %></p>
+            <div class="main__buttons">
+                <div></div>
+                <a href="/editar/<%= filme.id %>">Editar</a>
+                <a href="/deletar/<%= filme.id %>">Excluir</a>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+        </div>
+    </main>
+    
+    <footer>
+
+        <div class="grupo__persona">
+            <h4>
+                Quem somos:
+            </h4>
+        </div>
+
+        <div class="grupo">
+            <div class="grupo__persona">
+                <h4>Alexandre Meirelles</h4>
+
+                <h6>Coordenador de Marketing</h6>
+                <h6>Dev. FullStack</h6>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>NodeJS</li>
+                    <li>Express</li>
+                    <li>React</li>
+                    <li>Linux</li>
+                </ul>
+
+                <div class="grupo__logo">
+                    <a href="#" target="_blank"><img src= "../img/icons/linkedin.png" alt="logo__linkedin"></a>
+                    <a href="#" target="_blank"><img src= "../img/icons/github.png" alt="logo__GitHub"></a>
+                    <a href="#" target="_blank"><img src= "../img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
+                </div>                    
+
+            </div>
+
+
+            <div class="grupo__persona">
+                <h4>Elieldo Martins</h4>
+
+                <h6>Auxiliar Financeiro</h6>
+                <h6>Dev. FullStack</h6>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>Express</li>
+                    <li>MVC</li>
+                    <li>BEM</li>
+                </ul>
+
+                <div class="grupo__logo">
+                    <a href="#" target="_blank"><img src= "../img/icons/linkedin.png" alt="logo__linkedin"></a>
+                    <a href="#" target="_blank"><img src= "../img/icons/github.png" alt="logo__GitHub"></a>
+                    <a href="#" target="_blank"><img src= "../img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
                 </div>                
-                
-                <h2>Sinopse:</h2> <p><%= filme.descricao %></p>
-
-                <div class="main__buttons">
-                    <div></div>
-                    <a href="/editar/<%= filme.id %>">Editar</a>
-                    <a href="/deletar/<%= filme.id %>">Excluir</a>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
 
             </div>
-        </main>
-    
-        <footer>
 
             <div class="grupo__persona">
-                <h4>
-                    Quem somos:
-                </h4>
-            </div>
-    
-            <div class="grupo">
-                <div class="grupo__persona">
-                    <h4>Alexandre Meirelles</h4>
-    
-                    <h6>Coordenador de Marketing</h6>
-                    <h6>Dev. FullStack</h6>
-    
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>NodeJS</li>
-                        <li>Express</li>
-                        <li>React</li>
-                        <li>Linux</li>
-                    </ul>
-    
-                    <div class="grupo__logo">
-                        <a href="#" target="_blank"><img src= "../img/icons/linkedin.png" alt="logo__linkedin"></a>
-                        <a href="#" target="_blank"><img src= "../img/icons/github.png" alt="logo__GitHub"></a>
-                        <a href="#" target="_blank"><img src= "../img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
-                    </div>                    
-    
-                </div>
-    
-    
-                <div class="grupo__persona">
-                    <h4>Elieldo Martins</h4>
-    
-                    <h6>Auxiliar Financeiro</h6>
-                    <h6>Dev. FullStack</h6>
-    
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Python</li>
-                        <li>Express</li>
-                        <li>MVC</li>
-                        <li>BEM</li>
-                    </ul>
-    
-                    <div class="grupo__logo">
-                        <a href="#" target="_blank"><img src= "../img/icons/linkedin.png" alt="logo__linkedin"></a>
-                        <a href="#" target="_blank"><img src= "../img/icons/github.png" alt="logo__GitHub"></a>
-                        <a href="#" target="_blank"><img src= "../img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
-                    </div>                
-    
-                </div>
-    
-                <div class="grupo__persona">
-                    <h4>Victor Paim</h4>
-    
-                    <h6>Auxiliar Financeiro</h6>
-                    <h6>Dev. FullStack</h6>
-    
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>NodeJS</li>
-                        <li>Express</li>
-                        <li>Python</li>
-                        <li>MVC e BEM</li>
-                    </ul>
-    
-                    <div class="grupo__logo">
-                        <a href="https://www.linkedin.com/in/labupaim/" target="_blank"><img src= "../img/icons/linkedin.png" alt="logo__linkedin"></a>
-                        <a href="https://github.com/LabuPaim" target="_blank"><img src= "../img/icons/github.png" alt="logo__GitHub"></a>
-                        <a href="https://wa.me/qr/FREXR7E4HNB7N1" target="_blank"><img src= "../img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
-                    </div>                    
-    
-                </div>
-    
-                
-    
-            </div>
-            <div class="grupo__persona">
-                <h4>
-                    Projeto
-                </h4>
-                <h6>
-                    Netflix Clone
-                </h6>
-                <h6>
-                    Projeto do curso FullStack da Blue EdTech.
-                </h6>            
-            </div>
-    
-            
-    
-        </footer>
-        <center>
-            <small>
-             ©2022 Netflix Clone, Inc. Alunos da Blue EdTech - todos os direitos reservados.
-             </small> 
-         </center>
+                <h4>Victor Paim</h4>
+
+                <h6>Auxiliar Financeiro</h6>
+                <h6>Dev. FullStack</h6>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>NodeJS</li>
+                    <li>Express</li>
+                    <li>Python</li>
+                    <li>MVC e BEM</li>
+                </ul>
+
+                <div class="grupo__logo">
+                    <a href="https://www.linkedin.com/in/labupaim/" target="_blank"><img src= "../img/icons/linkedin.png" alt="logo__linkedin"></a>
+                    <a href="https://github.com/LabuPaim" target="_blank"><img src= "../img/icons/github.png" alt="logo__GitHub"></a>
+                    <a href="https://wa.me/qr/FREXR7E4HNB7N1" target="_blank"><img src= "../img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
+                </div>                    
+
+            </div>            
+
+        </div>
+        <div class="grupo__persona">
+            <h4>
+                Projeto
+            </h4>
+            <h6>
+                Netflix Clone
+            </h6>
+            <h6>
+                Projeto do curso FullStack da Blue EdTech.
+            </h6>            
+        </div>
+
+        
+
+    </footer>
+    <center>
+        <small>
+            ©2022 Netflix Clone, Inc. Alunos da Blue EdTech - todos os direitos reservados.
+        </small> 
+    </center>
     
     <script src="../js/script.js"></script>
 </body>

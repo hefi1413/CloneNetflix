@@ -98,7 +98,12 @@
     display: flex;
     flex-direction: column;    
     width: 20%;
-    min-height: 100%;
+    height: 28rem;
+  }
+
+  #main__sinopse{
+    height: 14.3rem;
+    overflow: hidden;
   }
 
   .main__secundaria .main__buttons{
