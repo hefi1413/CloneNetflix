@@ -47,9 +47,10 @@
   -webkit-backface-visibility: hidden;
   -webkit-touch-callout: none;
 }
-.owl-carousel .owl-item img {
+.owl-carousel .item img {
   display: block;
   width: 100%;
+  height: 25rem;
 }
 .owl-carousel .owl-dots.disabled,
 .owl-carousel .owl-nav.disabled {
@@ -147,7 +148,7 @@
 .owl-carousel .owl-item .owl-lazy[src^=''] {
   max-height: 0;
 }
-.owl-carousel .owl-item img.owl-lazy {
+.owl-carousel .item img.owl-lazy {
   transform-style: preserve-3d;
 }
 .owl-carousel .owl-video-wrapper {

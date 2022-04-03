@@ -78,7 +78,7 @@
   }
 
   .main__principal img {
-    max-height: 20rem;
+    height: 25rem;
   }
   
   
@@ -100,6 +100,7 @@
   .main__buttons a {
     text-decoration: none;
     background-color: #e50914;
+    border: solid 1px #000000;
     color: #141414;
     padding: 1rem 1.5rem;
     border-radius: 5px;
@@ -108,7 +109,8 @@
 
   .main__buttons a:hover {
     background-color: #141414;
-    color: #e50914;    
+    color: #e50914;
+    border: solid 1px #e50914;
   }
 
   .main__secundaria h2{
