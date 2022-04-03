@@ -62,11 +62,13 @@ header .lista .lista__corrent {
   flex-direction: column;
   align-items: center;
   align-content: center;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
   padding: 0rem 0rem 1.5rem 0rem;
   gap: 1rem;
   height: 100%;
   width: 100%;
 }
+
 
 main section form{
   display: flex;
@@ -91,7 +93,7 @@ main section form textarea{
 }
 
 #btnCadastrar{
-  background-color: #e50914;
+  background-color: var(--vermelho);
   border: solid 1px #000000;
   border-radius: 8px;
   padding: 0.5rem;
@@ -101,9 +103,9 @@ main section form textarea{
 
 #btnEditar{
   font-family: 'Trebuchet MS', Arial, sans-serif;
-  background-color: #e50914;
+  background-color: var(--vermelho);
   border: solid 1px #000000;
-  color: #141414;  
+  color: var(--preta);  
   font-weight: 600;
   font-size: 1.7rem;
   border-radius: 8px;
@@ -114,15 +116,15 @@ main section form textarea{
 }
 
 #btnEditar:hover{
-  background-color: #141414;
-  border: solid 1px #e50914;
-  color:#e50914;
+  background-color: var(--preta);
+  border: solid 1px var(--vermelho);
+  color: var(--vermelho);
 }
 
 footer {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start;  
   width: 100%;
   flex-direction: row;
   gap: 2.5rem;
@@ -150,6 +152,7 @@ footer {
 
 .grupo__persona h4{
   padding-bottom: 0.7rem;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
 .grupo__persona h6{

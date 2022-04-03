@@ -65,6 +65,18 @@
     padding: 1rem 0rem 2rem 0rem;
   }
 
+  main h1,
+  main h2{
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+  }
+
+  main p{
+    font-weight: 200;
+    font-size: 0.95rem;
+    color: #aaa;
+
+  }
+
   .main__principal{
     display: flex;
     flex-direction: column;
@@ -74,7 +86,7 @@
   }
 
   .main__principal h1{
-    font-size: 1.5rem;    
+    font-size: 1.7rem;
   }
 
   .main__principal img {
@@ -99,22 +111,28 @@
 
   .main__buttons a {
     text-decoration: none;
-    background-color: #e50914;
+    background-color: var(--vermelho);
     border: solid 1px #000000;
-    color: #141414;
+    color: var(--preta);
     padding: 1rem 1.5rem;
     border-radius: 5px;
     transition: 0.6s;
   }
 
   .main__buttons a:hover {
-    background-color: #141414;
-    color: #e50914;
-    border: solid 1px #e50914;
+    background-color: var(--preta);
+    color: var(--vermelho);
+    border: solid 1px var(--vermelho);
   }
 
   .main__secundaria h2{
-    padding: 0.5rem 0rem;    
+    padding: 0.5rem 0rem;
+    font-size: 1.3rem;
+  }
+
+  .main__secundaria__h2{
+    display: flex;
+    justify-content: center;
   }
 
   .main__secundaria .main__row{
@@ -189,6 +207,7 @@ footer {
   
   .grupo__persona h4{
     padding-bottom: 0.7rem;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
   }
   
   .grupo__persona h6{
