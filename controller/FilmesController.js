@@ -97,7 +97,7 @@ var filmesController = {
         message = '';
       }, 5000);
   
-      res.render('detalhes.ejs', { 'filme': filme, 'message': message });
+      res.render('detalhes', { 'filme': filme, 'message': message });
 
     } catch (err) {
       message = `Erro ! Não foi possível exibir detalhes do filme.`;
