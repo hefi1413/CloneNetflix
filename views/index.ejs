@@ -19,8 +19,8 @@
 
             <div class="lista">
                 <a class="lista__corrent" href="/">Inicio</a>
-                <a class="lista__navegacao" href="#">Series</a>
-                <a class="lista__navegacao" href="#">Filmes</a>
+                <a class="lista__navegacao" href="#filmes">Filmes</a>
+                <a class="lista__navegacao" href="#series">Series</a>
                 <a class="lista__navegacao" href="/cadastro">Cadastrar</a>
             </div>
         </header>
@@ -54,7 +54,7 @@
                 Filmes
             </h2>
             
-            <div class="owl-carousel owl-theme">
+            <div id="filmes" class="owl-carousel owl-theme">
                 <% filmes.forEach(item => { %>                
                     <% if (item.tipo.toLowerCase() == 'filme') { %>
                         <div class="item">
@@ -74,7 +74,7 @@
                 Séries
             </h2>
             
-            <div class="owl-carousel owl-theme">
+            <div id="series" class="owl-carousel owl-theme">
                 <% filmes.forEach(item => { %>                
                     <% if (item.tipo.toLowerCase() == 'serie') { %>
                         <div class="item">
