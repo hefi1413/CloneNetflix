@@ -38,8 +38,11 @@
                 <input type="text" id="nome" name="nome" required="required">
 
                 <label for="tipo">Tipo: </label>
-                <input type="text" id="tipo" name="tipo" required="required">
-
+                <select name="cars" id="cars" style="width:200px;height:25px;">
+                    <option value="filme">Filme</option>
+                    <option value="serie">Série</option>
+                </select>
+                                
                 <label for="imagem">Link da Imagem: </label>
                 <input type="url" id="imagem" name="imagem" required="required">
 
@@ -50,7 +53,12 @@
                 <input type="number" id="ano" name="ano" required="required">
 
                 <label for="genero">Genero: </label>
-                <input type="text" id="genero" name="genero" required="required">
+                <select name="genero" id="genero" style="width:200px;height:25px;" required="required">
+                    <option value="drama">Drama</option>
+                    <option value="acao">Ação</option>
+                    <option value="ficcao">Ficção</option>
+                    <option value="aventura">Aventura</option>
+                </select>
 
                 <!-- <center>
                     <img id="img__cadastrar" src="./img/icons/cadastrar.png" alt="logo__netflix" type="submit">
