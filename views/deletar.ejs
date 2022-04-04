@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="imagex/png" href="./img/icons/netflix__icon.png">
-    <link rel="stylesheet" href="../style/style__detalhes.css">
+    <link rel="stylesheet" href="../style/style__deletar.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" >
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
@@ -28,22 +28,21 @@
     </nav>
 
     <main>
-        <div class="container">
-            <form method="POST" action="/deletar/<%= filme.id %>">
-                <div class="item">
-                    <h2>Dejesa realmente deletar?</h2>
-                    <span><%= filme.nome %></span>
-                </div>
-                <div class="item">
-                    <img src="<%= filme.imagem %>" alt="capa do filme">
-                </div>
-                <div class="item">
-                    <a href="/detalhes">Cancelar</a>
-
-                    <button type="submit">Deletar</Button>
-                </div>
-            </form>
-        </div>
+        <form class="main__principal" method="POST" action="/deletar/<%= filme.id %>">
+            <div class="main__principal">
+                <h2>Dejesa realmente deletar?</h2>
+                <span><%= filme.nome.toUpperCase() %></span>
+                <img src="<%= filme.imagem %>" alt="capa do filme">
+            </div>
+            
+            <div class="main__buttons">
+                <div></div>
+                <a href="/detalhes/<%= filme.id %>">Cancelar</a>
+                <button type="submit">Deletar</Button>
+                <div></div>
+            </div>
+        </form>
+        
     </main>
     
     <footer>
