@@ -181,6 +181,7 @@ footer {
 
 .grupo__persona h4{
   padding-bottom: 0.7rem;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
 .grupo__persona h6{
@@ -203,7 +204,6 @@ footer {
   justify-content: start;
   align-items: center;
   text-decoration: none;
-  color: #e50914;
   gap: 0.3rem;
 }
 

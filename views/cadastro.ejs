@@ -32,23 +32,14 @@
             <span><%= message %></span>
         <% } %>
         <section class="main__cadastro" id="cadastro">
-            <h2>CADASTRO DE UM NOVO FILME OU SÉRIE</h2>
+            <h2>CADASTRO DE FILME OU SÉRIE</h2>
             <form  method="post" action="/add">
                 <label for="nome">Nome: </label>
                 <input type="text" id="nome" name="nome" required="required">
 
                 <label for="tipo">Tipo: </label>
-                <select name="cars" id="cars" style="width:200px;height:25px;">
-                    <option value="filme">Filme</option>
-                    <option value="serie">Série</option>
-                </select>
-                                
-                <label for="imagem">Link da Imagem: </label>
-                <input type="url" id="imagem" name="imagem" required="required">
-
-                <label for="descricao">Descrição: </label>
-                <input type="text" id="descricao" name="descricao" required="required">
-
+                <input type="text" id="tipo" name="tipo" required="required">
+                
                 <label for="ano">Ano: </label>
                 <input type="number" id="ano" name="ano" required="required">
 
@@ -60,9 +51,13 @@
                     <option value="aventura">Aventura</option>
                 </select>
 
-                <!-- <center>
-                    <img id="img__cadastrar" src="./img/icons/cadastrar.png" alt="logo__netflix" type="submit">
-                </center> -->
+                <label for="imagem">Link da Imagem: </label>
+                <textarea type="url" id="imagem" name="imagem" required="required" name="" id="" cols="30" rows="2"></textarea>
+                <!-- <input type="url" id="imagem" name="imagem" required="required"> -->
+
+                <label for="descricao">Descrição: </label>                
+                <textarea type="text" id="descricao" name="descricao" required="required" name="" id="" cols="30" rows="5"></textarea>
+                
                 
                 <center>
                     <button id="btnCadastrar" type="submit"><img id="img__cadastrar" src="./img/icons/cadastrar.png" alt="logo__netflix"></button>    
@@ -73,13 +68,111 @@
         </section>
     </main>
     
-    <footer id='footer'>
-        <center>
-           <small>
-            ©2022 Netflix. TM, ®Netflix.
-        </small> 
-        </center>
+    <footer>
+
+        <div class="grupo__persona">
+            <h4>
+                Quem somos:
+            </h4>
+        </div>
+
+        <div class="grupo">
+            <div class="grupo__persona">
+                <h4>Alexandre Meirelles</h4>
+
+                <h6>Coordenador de Marketing</h6>
+                <h6>Dev. FullStack</h6>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>NodeJS</li>
+                    <li>Express</li>
+                    <li>React</li>
+                    <li>Linux</li>
+                </ul>
+
+                <div class="grupo__logo">
+                    <a href="#" target="_blank"><img src= "./img/icons/linkedin.png" alt="logo__linkedin"></a>
+                    <a href="#" target="_blank"><img src= "./img/icons/github.png" alt="logo__GitHub"></a>
+                    <a href="#" target="_blank"><img src= "./img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
+                </div>                    
+
+            </div>
+
+
+            <div class="grupo__persona">
+                <h4>Elieldo Martins</h4>
+
+                <h6>Auxiliar Financeiro</h6>
+                <h6>Dev. FullStack</h6>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>Express</li>
+                    <li>MVC</li>
+                    <li>BEM</li>
+                </ul>
+
+                <div class="grupo__logo">
+                    <a href="#" target="_blank"><img src= "./img/icons/linkedin.png" alt="logo__linkedin"></a>
+                    <a href="#" target="_blank"><img src= "./img/icons/github.png" alt="logo__GitHub"></a>
+                    <a href="#" target="_blank"><img src= "./img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
+                </div>                
+
+            </div>
+
+            <div class="grupo__persona">
+                <h4>Victor Paim</h4>
+
+                <h6>Auxiliar Financeiro</h6>
+                <h6>Dev. FullStack</h6>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>NodeJS</li>
+                    <li>Express</li>
+                    <li>Python</li>
+                    <li>MVC e BEM</li>
+                </ul>
+
+                <div class="grupo__logo">
+                    <a href="https://www.linkedin.com/in/labupaim/" target="_blank"><img src= "./img/icons/linkedin.png" alt="logo__linkedin"></a>
+                    <a href="https://github.com/LabuPaim" target="_blank"><img src= "./img/icons/github.png" alt="logo__GitHub"></a>
+                    <a href="https://wa.me/qr/FREXR7E4HNB7N1" target="_blank"><img src= "./img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
+                </div>                    
+
+            </div>
+
+            
+
+        </div>
+        <div class="grupo__persona">
+            <h4>
+                Projeto
+            </h4>
+            <h6>
+                Netflix Clone
+            </h6>
+            <h6>
+                Projeto do curso FullStack da Blue EdTech.
+            </h6>            
+        </div>
+
+        
+
     </footer>
+    <center>
+        <small>
+         ©2022 Netflix Clone, Inc. Alunos da Blue EdTech - todos os direitos reservados.
+         </small> 
+     </center>
     
     <script src="./js/script.js"></script>
 </body>

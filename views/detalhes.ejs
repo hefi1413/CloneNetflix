@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="imagex/png" href="./img/icons/netflix__icon.png">
-    <link rel="stylesheet" href="./style/style__cadastro.css">
+    <link rel="shortcut icon" type="imagex/png" href="../img/icons/netflix__icon.png">
+    <link rel="stylesheet" href="../style/style__detalhes.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" >
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
@@ -15,46 +15,162 @@
     
     <nav>
         <header>
-            <img class="logo" src="./img/icons/logo.png" alt="logo__netflix">
+            <img class="logo" src="../img/icons/logo.png" alt="logo__netflix">
             <div class="lista">
                 <a class="lista__navegacao" href="/">Inicio</a>
                 <a class="lista__navegacao" href="#">Series</a>
                 <a class="lista__navegacao" href="#">Filmes</a>
-                <a class="lista__corrent" href="/cadastro">Cadastrar</a>
+                <a class="lista__navegacao" href="/cadastro">Cadastrar</a>
             </div>
 
         </header>
             
     </nav>
 
-        <main>
-            <h1>
-               resultado ID <%= filme.id %>
-            </h1>
-            <div class="container">
-                <div class="item">
-                    <img src="<%= filme.imagem %>" alt="capa do filme">
-                </div>
-                <div class="item texto">
-                    <h2><%= filme.nome %></h2>
-                    <h2><%= filme.ano %></h2>
-                    <h2><%= filme.genero %></h2>
-                    <h2><%= filme.tipo %></h2>
-                    <p><%= filme.descricao %></p>
-                    <a href="/editar/<%= filme.id %>">Editar</a>
-                    <a href="/deletar/<%= filme.id %>">Excluir</a>
-                </div>
+    <main>
+        <div class="main__principal">
+            <h1><%= filme.nome.toUpperCase() %></h1>    
+            <img src="<%= filme.imagem %>" alt="capa do filme <%= filme.nome %>">               
+            
+        </div>
+        
+        <div class="main__secundaria">
+            <div class="main__secundaria__h2">
+                <h2> <% if (filme.tipo == 'filme'){ %>
+                    Filme
+                <% } %>
+                <% if (filme.tipo == 'serie'){ %>
+                    Serie
+                <% } %>
+            </h2>
+
             </div>
-        </main>
+            
+            <div class="main__row">
+                <h2>Ano:</h2> <p><%= filme.ano %></p>
+            </div>
+            <div class="main__row">
+                <h2>Genero:</h2> <p><%= filme.genero %></p>
+            </div>                
+            
+            <h2>Sinopse:</h2> <p id="main__sinopse"><%= filme.descricao %></p>
+
+            <div class="main__buttons">
+                <div></div>
+                <a href="/editar/<%= filme.id %>">Editar</a>
+                <a href="/deletar/<%= filme.id %>">Excluir</a>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+        </div>
+    </main>
     
-    <footer id='footer'>
-        <center>
-           <small>
-            ©2022 Netflix. TM, ®Netflix.
-        </small> 
-        </center>
+    <footer>
+
+        <div class="grupo__persona">
+            <h4>
+                Quem somos:
+            </h4>
+        </div>
+
+        <div class="grupo">
+            <div class="grupo__persona">
+                <h4>Alexandre Meirelles</h4>
+
+                <h6>Coordenador de Marketing</h6>
+                <h6>Dev. FullStack</h6>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>NodeJS</li>
+                    <li>Express</li>
+                    <li>React</li>
+                    <li>Linux</li>
+                </ul>
+
+                <div class="grupo__logo">
+                    <a href="#" target="_blank"><img src= "../img/icons/linkedin.png" alt="logo__linkedin"></a>
+                    <a href="#" target="_blank"><img src= "../img/icons/github.png" alt="logo__GitHub"></a>
+                    <a href="#" target="_blank"><img src= "../img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
+                </div>                    
+
+            </div>
+
+
+            <div class="grupo__persona">
+                <h4>Elieldo Martins</h4>
+
+                <h6>Auxiliar Financeiro</h6>
+                <h6>Dev. FullStack</h6>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>Express</li>
+                    <li>MVC</li>
+                    <li>BEM</li>
+                </ul>
+
+                <div class="grupo__logo">
+                    <a href="#" target="_blank"><img src= "../img/icons/linkedin.png" alt="logo__linkedin"></a>
+                    <a href="#" target="_blank"><img src= "../img/icons/github.png" alt="logo__GitHub"></a>
+                    <a href="#" target="_blank"><img src= "../img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
+                </div>                
+
+            </div>
+
+            <div class="grupo__persona">
+                <h4>Victor Paim</h4>
+
+                <h6>Auxiliar Financeiro</h6>
+                <h6>Dev. FullStack</h6>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>NodeJS</li>
+                    <li>Express</li>
+                    <li>Python</li>
+                    <li>MVC e BEM</li>
+                </ul>
+
+                <div class="grupo__logo">
+                    <a href="https://www.linkedin.com/in/labupaim/" target="_blank"><img src= "../img/icons/linkedin.png" alt="logo__linkedin"></a>
+                    <a href="https://github.com/LabuPaim" target="_blank"><img src= "../img/icons/github.png" alt="logo__GitHub"></a>
+                    <a href="https://wa.me/qr/FREXR7E4HNB7N1" target="_blank"><img src= "../img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
+                </div>                    
+
+            </div>            
+
+        </div>
+        <div class="grupo__persona">
+            <h4>
+                Projeto
+            </h4>
+            <h6>
+                Netflix Clone
+            </h6>
+            <h6>
+                Projeto do curso FullStack da Blue EdTech.
+            </h6>            
+        </div>
+
+        
+
     </footer>
+    <center>
+        <small>
+            ©2022 Netflix Clone, Inc. Alunos da Blue EdTech - todos os direitos reservados.
+        </small> 
+    </center>
     
-    <script src="./js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
