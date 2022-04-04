@@ -38,13 +38,17 @@
                 <input type="text" id="nome" name="nome" required="required">
 
                 <label for="tipo">Tipo: </label>
-                <input type="text" id="tipo" name="tipo" required="required">
+                <select name="tipo" id="tipo" style="width:400px;height:25px;" required="required">
+                    <option value="filme">Filme</option>
+                    <option value="serie">Série</option>
+                </select>
                 
                 <label for="ano">Ano: </label>
-                <input type="number" id="ano" name="ano" required="required">
+                <input type="number" id="ano" name="ano" min="1900" max="2022" required="required">
 
+                <!-- apenas um (1) genero por filme-->
                 <label for="genero">Genero: </label>
-                <select name="genero" id="genero" style="width:200px;height:25px;" required="required">
+                <select name="genero" id="genero" style="width:400px;height:25px;" required="required">
                     <option value="drama">Drama</option>
                     <option value="acao">Ação</option>
                     <option value="ficcao">Ficção</option>
@@ -53,11 +57,9 @@
 
                 <label for="imagem">Link da Imagem: </label>
                 <textarea type="url" id="imagem" name="imagem" required="required" name="" id="" cols="30" rows="2"></textarea>
-                <!-- <input type="url" id="imagem" name="imagem" required="required"> -->
 
                 <label for="descricao">Descrição: </label>                
                 <textarea type="text" id="descricao" name="descricao" required="required" name="" id="" cols="30" rows="5"></textarea>
-                
                 
                 <center>
                     <button id="btnCadastrar" type="submit"><img id="img__cadastrar" src="./img/icons/cadastrar.png" alt="logo__netflix"></button>    
@@ -105,17 +107,17 @@
             <div class="grupo__persona">
                 <h4>Elieldo Martins</h4>
 
-                <h6>Auxiliar Financeiro</h6>
+                <h6>Dev. Soft.</h6>
                 <h6>Dev. FullStack</h6>
 
                 <ul>
+                    <li>Java</li>
+                    <li>JavaScript</li>
                     <li>HTML</li>
                     <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Python</li>
-                    <li>Express</li>
                     <li>MVC</li>
-                    <li>BEM</li>
+                    <li>Nodejs</li>
+                    <li>Express</li>
                 </ul>
 
                 <div class="grupo__logo">

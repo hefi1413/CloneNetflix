@@ -144,7 +144,7 @@ var filmesController = {
   alterar: async function (req, res, next) {
     console.log(req.method + ' ' + req.url);
 
-    //console.log('req.body',  req.body );
+    console.log('req.body',  req.body );
 
     let _filme = req.body;
     try {
@@ -166,8 +166,11 @@ var filmesController = {
       delete filme.id;
 
       filme.nome = _filme.nome;
-      filme.descricao = _filme.descricao;
+      filme.tipo = _filme.tipo;
+      filme.ano = _filme.ano;
+      filme.genero = _filme.genero;
       filme.imagem = _filme.imagem;
+      filme.descricao = _filme.descricao;
 
       filme.save()
         .then(result => {
