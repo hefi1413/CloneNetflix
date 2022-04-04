@@ -2,6 +2,8 @@
 
 Projeto Final - Clone da Netflix (catalogo) CRUD
 
+Deploy: https://netflixbr.herokuapp.com/
+
 Catálogo com Tema Livre
 
 Esse será o projeto final do módulo, esse projeto consiste na criação de um catálogo (com tema livre), onde será possível no futuro realizar as 4 operações do CRUD.
