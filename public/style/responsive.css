@@ -1,7 +1,94 @@
-@media screen and (max-width:700px) {
-    header .container {
-        display: flex;
-        flex-direction: column;
+@media screen and (min-width:1000px){
+    .descricao{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .descricao{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:700px){
+    header {
+    display: flex;
+    flex-direction: column;
+    }
+    header .lista{
+        margin-top: -2rem;
+
+    }
+
+    main section form {
+        width: 50%;
+      }
+
+    .filme-principal{
+        margin-top: 6rem;
+    }
+
+    .botao{
+        margin-top: 5px;
+        width: 300px;
+    }
+
+    .main__principal{
+        padding-left: 0rem;
+        gap: 0.5rem;
+    }
+
+    .main__secundaria{  
+        width: 40%;
+    }
+
+}
+@media screen and (max-width:535px){
+    .main__detalhes{
+        flex-wrap: wrap;
+    }
+    .main__secundaria{  
+        width: 80%;
+    }
+
+
+
+}
+
+
+
+@media screen and (max-width:450px){
+    main section form {
+        width: 80%;
+      }
+
+    header .lista{
+        margin-top: -2rem;
+
+    }
+
+    footer{
+        gap: 0.8rem;
+    }
+
+    #footer__quem{
+        display: none;
+    }
+
+    .grupo{
+        gap: 0.3rem;
+    }
+
+    .grupo__logo img {
+        max-width: 1rem;
+      }
+
+    .descricao{
+        width: 80%;
+    }
+
+    .filme-principal{
+        margin-top: 6rem;
     }
 
     .botao {
@@ -11,8 +98,15 @@
 
 }
 
+<<<<<<< HEAD
 @media screen and (min-width:1000px) {
     .descricao {
         width: 50%;
     }
 }
+=======
+
+
+
+
+>>>>>>> 10a075999f4e62dbb78e32e2f0df72f7f59c7eeb
