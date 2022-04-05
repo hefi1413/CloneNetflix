@@ -47,7 +47,7 @@
                 <input type="text" id="nome" name="nome" value="<%= filme.nome %>" required="required">
 
                 <label for="tipo">Tipo: </label>
-                <select name="tipo" id="tipo" style="width:400px;height:25px;" required="required" value=<%= filme.tipo %> >
+                <select name="tipo" id="tipo" required="required" value=<%= filme.tipo %> >
                     <option value="filme" <%= ( filme.tipo=='filme' ? 'selected' : '' ) %> >Filme</option>
                     <option value="serie" <%= ( filme.tipo=='serie' ? 'selected' : '' ) %>>Série</option>
                 </select>
@@ -57,7 +57,7 @@
 
                 <!-- apenas um (1) genero por filme-->
                 <label for="genero">Genero: </label>
-                <select name="genero" id="genero" style="width:400px;height:25px;" value=<%= filme.genero %> required>
+                <select name="genero" id="genero" value=<%= filme.genero %> required>
                     <option value="drama" <%= ( filme.genero=='drama' ? 'selected' : '' ) %> >Drama</option>
                     <option value="acao" <%= ( filme.genero=='acao' ? 'selected' : '' ) %>>Ação</option>
                     <option value="ficcao" <%= ( filme.genero=='ficcao' ? 'selected' : '' ) %>>Ficção</option>
