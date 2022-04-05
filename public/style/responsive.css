@@ -1,7 +1,23 @@
+@media screen and (min-width:1000px){
+    .descricao{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .descricao{
+        width: 50%;
+    }
+}
+
 @media screen and (max-width:700px){
-    header .container{
+    header {
     display: flex;
     flex-direction: column;
+    }
+
+    .filme-principal{
+        margin-top: 6rem;
     }
 
     .botao{
@@ -11,8 +27,23 @@
 
 }
 
-@media screen and (min-width:1000px){
+@media screen and (max-width:450px){
     .descricao{
-        width: 50%;
+        width: 80%;
     }
+
+    .filme-principal{
+        margin-top: 6rem;
+    }
+
+    .botao{
+        margin-top: 5px;
+        width: 300px;
+    }
+
 }
+
+
+
+
+
