@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="imagex/png" href="./img/icons/netflix__icon.png">
-    <link rel="stylesheet" href="./style/main.css">
-    <link rel="stylesheet" href="./style/responsive.css">    
-    <link rel="stylesheet" href="./style/owl/carousel.min.css">
-    <link rel="stylesheet" href="./style/owl/theme.default.min.css">
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/responsive.css">    
+    <link rel="stylesheet" href="/style/style__message.css">
+    <link rel="stylesheet" href="/style/owl/carousel.min.css">
+    <link rel="stylesheet" href="/style/owl/theme.default.min.css">
     
     <title>NETFLIX CLONE</title>
 </head>
@@ -48,6 +49,11 @@
     </nav>
 
     <main>
+
+        <% let _display = ( message ? "display:flex;" : "display:none;" ); %>
+        <section id="message" style=<%= _display %> >
+            <p><%= message %></p> <span id="close">&times;</span>
+        </section>
 
         <div class="carrosel-filmes">
             <h2>
@@ -201,6 +207,7 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="/js/setup.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
 
 </body>
 </html>

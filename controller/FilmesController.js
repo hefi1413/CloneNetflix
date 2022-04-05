@@ -3,6 +3,7 @@
 const Filmes = require('../models/filmes.js');
 
 var message = '';
+var type = '';
 
 var filmesController = {
   // Exibe todos titulos cadastrados no catalogo
@@ -37,6 +38,86 @@ var filmesController = {
 
     res.render('cadastro', { 'message': message });
 
+  },
+
+  // renderiza tela detalhes
+  detalhes: async function (req, res, next) {
+    console.log(req.method + ' ' + req.url);
+
+    let flmeid = req.params.id;
+    try {
+      // localiza filme no BD
+      let filme = await Filmes.findByPk(flmeid);
+
+      if (!filme) {
+        message = `Erro ! O filme id:${flmeid} não foi localizado !`;
+        res.redirect('/');
+        return;
+      };
+
+      setTimeout(() => {
+        message = '';
+      }, 5000);
+
+      res.render('detalhes', { 'filme': filme, 'message': message });
+
+    } catch (err) {
+      message = `Erro ! Não foi possível exibir detalhes do filme.`;
+      console.log('Erro ! ' + err.message );
+      res.redirect('/');
+    }
+  },
+
+  // renderiza a tela de edição (/detalhes/editar)
+  editar: async function (req, res, next) {
+    console.log(req.method + ' ' + req.url);
+
+    let filmeid = req.params.id;
+    try {
+      // localiza filme no BD
+      let filme = await Filmes.findByPk(filmeid);
+
+      if (!filme) {
+        message = `Erro ! O filme id:${filmeid} não foi localizado !`;
+        res.redirect(`/detalhes/${filmeid}`);
+        return;
+      };
+
+      setTimeout(() => {
+        message = '';
+      }, 5000);
+
+      res.render('editar', { 'filme': filme, 'message': message, 'type': type });
+
+    } catch (err) {
+      message = `Erro ! Não foi possível editar filme.`;
+      console.log('Erro ! ' + err.message );
+      res.redirect(`/detalhes/${filmeid}`);
+    }
+  },
+
+  // renderiza a tela de deleção (/detalhes/deletar)
+  deletar: async function (req, res, next) {
+    console.log(req.method + ' ' + req.url);
+
+    let filmeid = req.params.id;
+    try {
+      // localiza filme no BD
+      let filme = await Filmes.findByPk(filmeid);
+
+      if (!filme) {
+        message = `Erro ! O filme id:${filmeid} não foi localizado !`;
+        res.redirect(`/detalhes/${filmeid}`);
+        return;
+      };
+
+      res.render('deletar', { 'filme': filme });
+
+    } catch (err) {
+      message = `Erro ! Não é possível deletar filme.`;
+      console.log('Erro ! ' + err.message );
+      res.redirect(`/detalhes/${filmeid}`);
+    }
   },
 
   // Adiciona/cadastra um titulo no catalogo (/cadastro/add)
@@ -75,87 +156,6 @@ var filmesController = {
       res.redirect('/cadastro');
     }
   },
-
-  // renderiza tela detalhes
-  detalhes: async function (req, res, next) {
-    console.log(req.method + ' ' + req.url);
-
-    let flmeid = req.params.id;
-    try {
-      // localiza filme no BD
-      let filme = await Filmes.findByPk(flmeid);
-
-      if (!filme) {
-        message = `Erro ! O filme id:${flmeid} não foi localizado !`;
-        res.redirect('/');
-        return;
-      };
-
-      setTimeout(() => {
-        message = '';
-      }, 5000);
-  
-      res.render('detalhes', { 'filme': filme, 'message': message });
-
-    } catch (err) {
-      message = `Erro ! Não foi possível exibir detalhes do filme.`;
-      console.log('Erro ! ' + err.message );
-      res.redirect('/');
-    }
-  },
-
-  // renderiza a tela de edição (/detalhes/editar)
-  editar: async function (req, res, next) {
-    console.log(req.method + ' ' + req.url);
-
-    let filmeid = req.params.id;
-    try {
-      // localiza filme no BD
-      let filme = await Filmes.findByPk(filmeid);
-
-      if (!filme) {
-        message = `Erro ! O filme id:${filmeid} não foi localizado !`;
-        res.redirect(`/detalhes/${filmeid}`);
-        return;
-      };
-
-      setTimeout(() => {
-        message = '';
-      }, 5000);
-  
-      res.render('editar', { 'filme': filme, 'message': message });
-
-    } catch (err) {
-      message = `Erro ! Não foi possível editar filme.`;
-      console.log('Erro ! ' + err.message );
-      res.redirect(`/detalhes/${filmeid}`);
-    }
-  },
-  
-  // renderiza a tela de deleção (/detalhes/deletar)
-  deletar: async function (req, res, next) {
-    console.log(req.method + ' ' + req.url);
-
-    let filmeid = req.params.id;
-    try {
-      // localiza filme no BD
-      let filme = await Filmes.findByPk(filmeid);
-
-      if (!filme) {
-        message = `Erro ! O filme id:${filmeid} não foi localizado !`;
-        res.redirect(`/detalhes/${filmeid}`);
-        return;
-      };
-
-      res.render('deletar', { 'filme': filme });
-
-    } catch (err) {
-      message = `Erro ! Não é possível deletar filme.`;
-      console.log('Erro ! ' + err.message );
-      res.redirect(`/detalhes/${filmeid}`);
-    }
-  },
-
 
   // Altera um titulo cadastrado no catalogo
   // --------------------------
