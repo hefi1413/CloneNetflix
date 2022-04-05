@@ -8,6 +8,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 /* elementos base */
 body {
   background-color: var(--preta);
@@ -15,7 +16,7 @@ body {
   color: white;
 }
 
-nav{
+nav {
   width: 100%;
 }
 
@@ -26,7 +27,7 @@ header {
   gap: 2rem;
   height: 68px;
   padding: 0 4%;
-  
+
 }
 
 header .logo {
@@ -57,7 +58,7 @@ header .lista .lista__corrent {
   cursor: default;
 }
 
-.main__cadastro{
+.main__cadastro {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,29 +71,29 @@ header .lista .lista__corrent {
 }
 
 
-main section form{
+main section form {
   display: flex;
   flex-direction: column;
   width: 25%;
 }
 
-main section form input{
+main section form input {
   margin-top: 0.3rem;
   margin-bottom: 0.85rem;
   width: 100%;
 }
 
-main section form textarea{
+main section form textarea {
   margin-top: 0.3rem;
   margin-bottom: 0.85rem;
   width: 100%;
 }
 
-#img__cadastrar{
+#img__cadastrar {
   width: 100%;
 }
 
-#btnCadastrar{
+#btnCadastrar {
   background-color: var(--vermelho);
   border: solid 1px #000000;
   border-radius: 8px;
@@ -101,11 +102,11 @@ main section form textarea{
   cursor: pointer;
 }
 
-#btnEditar{
+#btnEditar {
   font-family: 'Trebuchet MS', Arial, sans-serif;
   background-color: var(--vermelho);
   border: solid 1px #000000;
-  color: var(--preta);  
+  color: var(--preta);
   font-weight: 600;
   font-size: 1.7rem;
   border-radius: 8px;
@@ -115,7 +116,7 @@ main section form textarea{
   transition: 1s;
 }
 
-#btnEditar:hover{
+#btnEditar:hover {
   background-color: var(--preta);
   border: solid 1px var(--vermelho);
   color: var(--vermelho);
@@ -124,7 +125,7 @@ main section form textarea{
 footer {
   display: flex;
   justify-content: center;
-  align-items: flex-start;  
+  align-items: flex-start;
   width: 100%;
   flex-direction: row;
   gap: 2.5rem;
@@ -133,7 +134,7 @@ footer {
 
 
 
-.grupo{
+.grupo {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -141,7 +142,7 @@ footer {
   gap: 0.8rem;
 }
 
-.grupo__persona{
+.grupo__persona {
   display: flex;
   flex-direction: column;
   max-width: 10rem;
@@ -150,26 +151,26 @@ footer {
   font-size: 1rem;
 }
 
-.grupo__persona h4{
+.grupo__persona h4 {
   padding-bottom: 0.7rem;
   font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
-.grupo__persona h6{
+.grupo__persona h6 {
   padding-bottom: 0.4rem;
 }
 
-.grupo__persona ul{
+.grupo__persona ul {
   padding-left: 0.9rem;
   padding-bottom: 0.4rem;
 }
 
-.grupo__persona ul li{
+.grupo__persona ul li {
   font-size: 0.60rem;
   font-weight: 100;
 }
 
-.grupo__logo{
+.grupo__logo {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -178,7 +179,34 @@ footer {
   gap: 0.3rem;
 }
 
-.grupo__logo img{
+.grupo__logo img {
   max-width: 2rem;
 }
 
+section#message {
+  padding: 1.5rem;
+  background-color: rgb(197, 255, 214);
+  color: #004d04;
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span#close {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+span#close:hover {
+  color: rgb(255, 0, 0);
+  transform: scale(1.5);
+}

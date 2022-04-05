@@ -16,10 +16,10 @@ body {
   color: white;
 }
 
-nav{
+nav {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/capas/The-Old-Guard.jpg');
   background-size: 100% 100%;
-  
+
   width: 100%;
   min-height: 46rem;
 }
@@ -41,7 +41,7 @@ header {
   gap: 2rem;
   height: 68px;
   padding: 0 4%;
-  
+
 }
 
 header .logo {
@@ -135,12 +135,13 @@ header .lista .lista__corrent {
 .h3-details {
   margin-top: 40px;
 }
-.carrosel-filmes{
+
+.carrosel-filmes {
   margin-left: 4%;
   margin-top: 5rem;
 }
 
-main{
+main {
   margin-top: -10rem;
 
 }
@@ -162,7 +163,7 @@ footer {
 
 
 
-.grupo{
+.grupo {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -170,7 +171,7 @@ footer {
   gap: 0.8rem;
 }
 
-.grupo__persona{
+.grupo__persona {
   display: flex;
   flex-direction: column;
   max-width: 10rem;
@@ -179,26 +180,26 @@ footer {
   font-size: 1rem;
 }
 
-.grupo__persona h4{
+.grupo__persona h4 {
   padding-bottom: 0.7rem;
   font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
-.grupo__persona h6{
+.grupo__persona h6 {
   padding-bottom: 0.4rem;
 }
 
-.grupo__persona ul{
+.grupo__persona ul {
   padding-left: 0.9rem;
   padding-bottom: 0.4rem;
 }
 
-.grupo__persona ul li{
+.grupo__persona ul li {
   font-size: 0.60rem;
   font-weight: 100;
 }
 
-.grupo__logo{
+.grupo__logo {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -207,6 +208,6 @@ footer {
   gap: 0.3rem;
 }
 
-.grupo__logo img{
+.grupo__logo img {
   max-width: 2rem;
 }

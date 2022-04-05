@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="imagex/png" href="./img/icons/netflix__icon.png">
-    <link rel="stylesheet" href="./style/style__cadastro.css">
+    <link rel="stylesheet" href="/style/style__cadastro.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" >
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
@@ -28,9 +28,10 @@
     </nav>
 
     <main>
-        <% if(message){ %>
-            <span><%= message %></span>
-        <% } %>
+        <% let _display = ( message ? "display:flex;" : "display:none;" ); %>
+        <section id="message" style=<%= _display %> >
+            <p><%= message %></p> <span id="close">&times;</span>
+        </section>
         <section class="main__cadastro" id="cadastro">
             <h2>CADASTRO DE FILME OU SÉRIE</h2>
             <form  method="post" action="/add">
@@ -145,9 +146,9 @@
                 </ul>
 
                 <div class="grupo__logo">
-                    <a href="https://www.linkedin.com/in/labupaim/" target="_blank"><img src= "./img/icons/linkedin.png" alt="logo__linkedin"></a>
-                    <a href="https://github.com/LabuPaim" target="_blank"><img src= "./img/icons/github.png" alt="logo__GitHub"></a>
-                    <a href="https://wa.me/qr/FREXR7E4HNB7N1" target="_blank"><img src= "./img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
+                    <a href="https://www.linkedin.com/in/labupaim/" target="_blank"><img src= "/img/icons/linkedin.png" alt="logo__linkedin"></a>
+                    <a href="https://github.com/LabuPaim" target="_blank"><img src= "/img/icons/github.png" alt="logo__GitHub"></a>
+                    <a href="https://wa.me/qr/FREXR7E4HNB7N1" target="_blank"><img src= "/img/icons/whatsapp--v1.png" alt="logo__GitHub"></a>
                 </div>                    
 
             </div>
@@ -177,6 +178,6 @@
          </small> 
      </center>
     
-    <script src="./js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
