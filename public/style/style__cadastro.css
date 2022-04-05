@@ -184,9 +184,9 @@ footer {
 }
 
 section#message {
-  padding: 1.5rem;
-  background-color: rgb(197, 255, 214);
-  color: #004d04;
+  padding: 0.5rem;
+  background-color: var(--vermelho);
+  color: #ffffff;
   position: fixed;
   top: 3rem;
   left: 0;
