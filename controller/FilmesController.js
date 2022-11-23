@@ -8,13 +8,38 @@ var type = '';
 var filmesController = {
   // Exibe todos titulos cadastrados no catalogo
   // --------------------------
-  listar: async function (req, res, next) {
+  listarFilmes: async function (req, res, next) {
     const fileName = 'index.ejs';
 
     try {
-      let filmes = await Filmes.findAll({ raw: true, order: [['id', 'DESC']] });
+      let filmes = await Filmes.findAll({ raw: true, 
+        where: { tipo : 1 } , 
+        order: [['id', 'DESC']] });
 
-      //console.table( filmes );
+      console.table( filmes );
+
+      setTimeout(() => {
+        message = '';
+      }, 5000);
+
+      res.render(fileName, { filmes: filmes, message: message });
+    } catch (err) {
+      console.log(`Erro ! ${err}`);
+      res.status(500).send('Não foi possível exibir os dados.');
+    }
+  },
+
+  // Exibe todos titulos cadastrados no catalogo
+  // --------------------------
+  listarSeries: async function (req, res, next) {
+    const fileName = 'index.ejs';
+
+    try {
+      let filmes = await Filmes.findAll({ raw: true, 
+        where: { tipo : 2 } , 
+        order: [['id', 'DESC']] });
+
+      console.table( filmes );
 
       setTimeout(() => {
         message = '';

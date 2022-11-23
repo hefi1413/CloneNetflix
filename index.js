@@ -22,7 +22,10 @@ app.use(express.urlencoded({ extended: false }));
 
 // Rotas
 
-app.get('/', filmesController.listar);
+app.get('/', filmesController.listarFilmes);
+
+app.get('/filmes', filmesController.listarFilmes);
+app.get('/series', filmesController.listarFilmes);
 
 app.get('/cadastro', filmesController.cadastro);
 app.post('/add', filmesController.adicionar);
